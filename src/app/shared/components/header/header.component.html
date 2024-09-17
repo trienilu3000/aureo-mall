@@ -1,0 +1,245 @@
+<div class="navbar">
+  <div [@miniHeaderAnimation]="miniHeaderState" class="mini-header">
+    <app-mini-header></app-mini-header>
+  </div>
+  <div [@headerAnimation]="headerState" class="header">
+    <div class="menu-drawer">
+      <button class="bars-btn" nzType="primary" (click)="openDrawer('main')">
+        <i class="fa-solid fa-bars-staggered"></i>
+      </button>
+      <div
+        class="search-mobile menu-right-items"
+        (click)="openDrawer('search')"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="search">
+          <path
+            fill="#000"
+            d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"
+          ></path>
+        </svg>
+      </div>
+    </div>
+    <app-nz-drawer
+      [closable]="false"
+      [drawerType]="'main'"
+      [visible]="drawerState.visibleMain"
+      placement="left"
+      width="320px"
+      [drawerTitle]="drawerTitleMain"
+      (onClose)="closeDrawer($event)"
+    >
+      <ul nz-list nzBordered nzSize="large">
+        <li *ngFor="let item of menus" nz-list-item nzNoFlex>
+          <a (click)="openDrawer('sub')"
+            ><span>{{ item }}</span>
+            <span
+              nz-icon
+              nzType="right"
+              nzTheme="outline"
+              nzAlign="right"
+            ></span
+          ></a>
+        </li>
+      </ul>
+    </app-nz-drawer>
+
+    <app-nz-drawer
+      [visible]="drawerState.visibleSub"
+      [drawerType]="'sub'"
+      [placement]="'left'"
+      [width]="'320px'"
+      [drawerTitle]="drawerTitleSub"
+      (onClose)="closeDrawer($event)"
+    >
+      <ul nz-list nzBordered nzSize="large">
+        <li *ngFor="let item of menus" nz-list-item nzNoFlex>
+          <a
+            ><span>{{ item }}</span>
+          </a>
+        </li>
+      </ul>
+    </app-nz-drawer>
+    <ng-template #drawerTitleMain>
+      <div class="custom-drawer-title">
+        <span>Menu</span>
+        <button
+          nz-button
+          class="close-btn-custom"
+          nzType="link"
+          nzShape="circle"
+          (click)="closeDrawer('main')"
+        >
+          <i nz-icon nzType="close"></i>
+        </button>
+      </div>
+    </ng-template>
+    <ng-template #drawerTitleSub>
+      <div class="custom-drawer-titlesub">
+        <button
+          nz-button
+          class="close-btn-custom"
+          nzType="link"
+          nzShape="circle"
+          (click)="closeDrawer('sub')"
+        >
+          <span nz-icon nzType="left" nzTheme="outline"></span>
+        </button>
+        <span class="custom-title">Ga</span>
+      </div>
+    </ng-template>
+    <div class="menu-logo">
+      <a routerLink="/">
+        <img
+          src="../assets/images/demo-fashion-collection-logo-dark.svg"
+          alt=""
+      /></a>
+    </div>
+    <div class="menu-column">
+      <ul>
+        <li *ngFor="let item of menus">
+          <a>{{ item }}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="menu-right">
+      <div class="search menu-right-items" (click)="openDrawer('search')">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="search">
+          <path
+            fill="#000"
+            d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"
+          ></path>
+        </svg>
+      </div>
+      <div
+        class="account menu-right-items"
+        routerLink="/account/login"
+        *ngIf="!isLoggedIn"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="user">
+          <path
+            fill="#6563FF"
+            d="M15.71,12.71a6,6,0,1,0-7.42,0,10,10,0,0,0-6.22,8.18,1,1,0,0,0,2,.22,8,8,0,0,1,15.9,0,1,1,0,0,0,1,.89h.11a1,1,0,0,0,.88-1.1A10,10,0,0,0,15.71,12.71ZM12,12a4,4,0,1,1,4-4A4,4,0,0,1,12,12Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="wishlist menu-right-items">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="heart">
+          <path
+            fill="#6563FF"
+            d="M20.16,5A6.29,6.29,0,0,0,12,4.36a6.27,6.27,0,0,0-8.16,9.48l6.21,6.22a2.78,2.78,0,0,0,3.9,0l6.21-6.22A6.27,6.27,0,0,0,20.16,5Zm-1.41,7.46-6.21,6.21a.76.76,0,0,1-1.08,0L5.25,12.43a4.29,4.29,0,0,1,0-6,4.27,4.27,0,0,1,6,0,1,1,0,0,0,1.42,0,4.27,4.27,0,0,1,6,0A4.29,4.29,0,0,1,18.75,12.43Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="cart menu-right-items" routerLink="/cart">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          enable-background="new 0 0 48 48"
+          viewBox="0 0 48 48"
+        >
+          <path
+            d="M36.8,45.8H11.2c-3.7,0-6.7-3-6.7-6.7V13.4c0-1.1,0.9-2,2-2h35.1c1.1,0,2,0.9,2,2v25.6C43.5,42.8,40.5,45.8,36.8,45.8z     M8.4,15.4v23.7c0,1.6,1.3,2.8,2.8,2.8h25.5c1.6,0,2.8-1.3,2.8-2.8V15.4H8.4z"
+          />
+          <path
+            d="M2.5 32.6c-.5 0-1-.2-1.4-.6-.8-.8-.7-2 0-2.8l11.2-10.9c.8-.8 2-.7 2.8 0 .8.8.7 2 0 2.8L3.9 32C3.5 32.4 3 32.6 2.5 32.6zM45.5 32.6c-.5 0-1-.2-1.4-.6L33 21.1c-.8-.8-.8-2 0-2.8.8-.8 2-.8 2.8 0l11.2 10.9c.8.8.8 2 0 2.8C46.5 32.4 46 32.6 45.5 32.6z"
+          />
+          <g>
+            <path
+              d="M41.5,15.4C41.5,15.4,41.5,15.4,41.5,15.4H6.5c-0.6,0-1.3-0.3-1.6-0.9c-0.4-0.5-0.4-1.2-0.2-1.8l3.7-9.2    c0.3-0.7,1-1.2,1.8-1.2h27.7c0.8,0,1.5,0.5,1.8,1.2l3.6,9c0.2,0.3,0.3,0.6,0.3,1C43.5,14.5,42.6,15.4,41.5,15.4z M9.4,11.5h29.3    l-2.1-5.3H11.5L9.4,11.5z"
+            />
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+<app-nz-drawer
+  class="drawer-search"
+  [visible]="drawerState.isSearch"
+  [drawerType]="'search'"
+  [placement]="'top'"
+  (onClose)="closeDrawer($event)"
+  height="750px"
+>
+  <div class="drawer-search-content">
+    <div class="search-close-wrapper">
+      <button
+        nz-button
+        class="search-close"
+        nzType="link"
+        nzShape="circle"
+        (click)="closeDrawer('search')"
+      >
+        <span nz-icon nzType="close" nzTheme="outline"></span>
+      </button>
+    </div>
+
+    <h1 class="search-title">What are you looking for?</h1>
+    <div class="search-field">
+      <nz-input-group [nzSuffix]="suffixIconSearch" class="nz-input-group">
+        <input type="text" nz-input placeholder="I'm looking for..." />
+      </nz-input-group>
+      <ng-template #suffixIconSearch>
+        <span nz-icon nzType="search"></span>
+      </ng-template>
+    </div>
+    <div class="quick-search">
+      <div>Quick Search :</div>
+      <span>Sweatshirt</span>
+    </div>
+    <div class="popular-product">
+      <h2>Popular product</h2>
+      <div nz-row class="product-card-list">
+        <nz-card nzHoverable [nzCover]="coverTemplate">
+          <h4 class="product-card-title">Regular cotton shirt</h4>
+          <div class="product-card-price">$18.99</div>
+        </nz-card>
+        <ng-template #coverTemplate>
+          <img
+            alt="example"
+            src="https://hongotheme.myshopify.com/cdn/shop/products/Lifestyle-product-11.jpg?v=1670302452&width=165"
+          />
+        </ng-template>
+        <nz-card nzHoverable [nzCover]="coverTemplate">
+          <h4 class="product-card-title">Regular cotton shirt</h4>
+          <div class="product-card-price">$18.99</div>
+        </nz-card>
+        <ng-template #coverTemplate>
+          <img
+            alt="example"
+            src="https://hongotheme.myshopify.com/cdn/shop/products/Lifestyle-product-11.jpg?v=1670302452&width=165"
+          />
+        </ng-template>
+        <nz-card nzHoverable [nzCover]="coverTemplate">
+          <h4 class="product-card-title">Regular cotton shirt</h4>
+          <div class="product-card-price">$18.99</div>
+        </nz-card>
+        <ng-template #coverTemplate>
+          <img
+            alt="example"
+            src="https://hongotheme.myshopify.com/cdn/shop/products/Lifestyle-product-11.jpg?v=1670302452&width=165"
+          />
+        </ng-template>
+        <nz-card nzHoverable [nzCover]="coverTemplate">
+          <h4 class="product-card-title">Regular cotton shirt</h4>
+          <div class="product-card-price">$18.99</div>
+        </nz-card>
+        <ng-template #coverTemplate>
+          <img
+            alt="example"
+            src="https://hongotheme.myshopify.com/cdn/shop/products/Lifestyle-product-11.jpg?v=1670302452&width=165"
+          />
+        </ng-template>
+        <nz-card nzHoverable [nzCover]="coverTemplate">
+          <h4 class="product-card-title">Regular cotton shirt</h4>
+          <div class="product-card-price">$18.99</div>
+        </nz-card>
+        <ng-template #coverTemplate>
+          <img
+            alt="example"
+            src="https://hongotheme.myshopify.com/cdn/shop/products/Lifestyle-product-11.jpg?v=1670302452&width=165"
+          />
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</app-nz-drawer>

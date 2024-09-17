@@ -1,0 +1,73 @@
+<div class="bread_crumb">
+  <div class="container">
+    <div class="page-title">
+      <h1>Login</h1>
+      <ul class="breadcrumb">
+        <li><a>Home</a></li>
+        <li>
+          <span
+            nz-icon
+            nzType="right"
+            nzTheme="outline"
+            class="right-btn-custom"
+          ></span>
+        </li>
+        <li>Account</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="container">
+    <form
+      nz-form
+      [nzLayout]="'vertical'"
+      [formGroup]="validateForm"
+      (ngSubmit)="
+        submitForm(
+          validateForm.get('email').value,
+          validateForm.get('password').value
+        )
+      "
+      class="login-form"
+    >
+      <nz-form-item>
+        <nz-form-label>Your email</nz-form-label>
+        <nz-form-control>
+          <input nz-input formControlName="email" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Password</nz-form-label>
+        <nz-form-control>
+          <input nz-input type="password" nz-input formControlName="password" />
+        </nz-form-control>
+      </nz-form-item>
+      <div nz-row class="login-form-margin">
+        <div>
+          <a class="login-form-forgot">Forgot your password?</a>
+        </div>
+      </div>
+      <button
+        nz-button
+        class="login-form-button login-form-margin"
+        [nzType]="'primary'"
+      >
+        Sign in
+      </button>
+      <div class="or-wrapper">
+        <hr />
+        <span>Or</span>
+        <hr />
+      </div>
+      <button
+        type="button"
+        nz-button
+        class="login-form-button login-form-margin"
+        routerLink="/account/register"
+      >
+        Create an account
+      </button>
+    </form>
+  </div>
+</div>

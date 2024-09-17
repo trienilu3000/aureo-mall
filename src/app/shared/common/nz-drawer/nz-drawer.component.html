@@ -1,0 +1,11 @@
+<nz-drawer
+  [nzClosable]="closable"
+  [nzVisible]="visible"
+  [nzPlacement]="placement"
+  [nzWidth]="width"
+  [nzTitle]="drawerTitle"
+  [nzHeight]="height"
+  (nzOnClose)="closeDrawer()"
+>
+  <ng-content *nzDrawerContent></ng-content>
+</nz-drawer>

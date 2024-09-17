@@ -1,0 +1,78 @@
+<div class="bread_crumb">
+  <div class="container">
+    <div class="page-title">
+      <h1>Register</h1>
+      <ul class="breadcrumb">
+        <li><a>Home</a></li>
+        <li>
+          <span
+            nz-icon
+            nzType="right"
+            nzTheme="outline"
+            class="right-btn-custom"
+          ></span>
+        </li>
+        <li>Create Account</li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="container">
+    <form
+      nz-form
+      [nzLayout]="'vertical'"
+      [formGroup]="validateForm"
+      (ngSubmit)="
+        submitForm(
+          validateForm.get('firstName').value,
+          validateForm.get('lastName').value,
+          validateForm.get('email').value,
+          validateForm.get('password').value
+        )
+      "
+      class="register-form"
+    >
+      <nz-form-item>
+        <nz-form-label>First name</nz-form-label>
+        <nz-form-control>
+          <input nz-input formControlName="firstName" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Last name</nz-form-label>
+        <nz-form-control>
+          <input nz-input formControlName="lastName" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Email</nz-form-label>
+        <nz-form-control>
+          <input nz-input formControlName="email" />
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-label>Password</nz-form-label>
+        <nz-form-control>
+          <input nz-input type="password" nz-input formControlName="password" />
+        </nz-form-control>
+      </nz-form-item>
+      <button
+        nz-button
+        class="register-form-button register-form-margin"
+        [nzType]="'primary'"
+      >
+        Create now
+      </button>
+
+      <button
+        type="button"
+        nz-button
+        class="register-form-button register-form-margin"
+        routerLink="/account/login"
+      >
+        Login
+      </button>
+    </form>
+  </div>
+</div>

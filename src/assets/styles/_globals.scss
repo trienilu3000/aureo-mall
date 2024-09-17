@@ -1,0 +1,71 @@
+$primary-color: #3498db;
+$secondary-color: #2ecc71;
+$font-size-base: 16px;
+$spacing-unit: 8px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+body {
+  font-size: $font-size-base;
+  color: $primary-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-unit * 2;
+}
+
+.section {
+  padding: $spacing-unit * 4 0;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
+}
+
+button {
+  background-color: $secondary-color;
+  color: #fff;
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}

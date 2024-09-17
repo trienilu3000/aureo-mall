@@ -1,0 +1,16 @@
+:host {
+  padding-top: 111px;
+  display: block;
+}
+
+@media only screen and (max-width: 1199px) {
+  :host {
+    padding-top: 44px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.container {
+  display: flex;
+}

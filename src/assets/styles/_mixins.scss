@@ -1,0 +1,47 @@
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $breakpoint == "medium" {
+    @media (max-width: 768px) {
+      @content;
+    }
+  } @else if $breakpoint == "large" {
+    @media (max-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+@mixin text-style($size, $weight: normal, $line-height: 1.5) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+}
+
+@mixin box-shadow($x, $y, $blur, $color) {
+  box-shadow: $x $y $blur $color;
+}
+
+@mixin button($bg-color, $text-color) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+@mixin transition($property, $time) {
+  transition: $property $time ease-in-out;
+}

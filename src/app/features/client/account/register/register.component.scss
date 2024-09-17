@@ -1,0 +1,129 @@
+:host {
+  padding-top: 130px;
+  display: flex;
+  flex-direction: column;
+  a {
+    color: #656565;
+  }
+  button {
+    height: 52px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 4px;
+  }
+}
+
+.page-title {
+  margin-bottom: 25px;
+  h1 {
+    font-size: 38px;
+    font-weight: 700;
+  }
+}
+.breadcrumb {
+  margin-top: 0;
+  margin-bottom: 1em;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  li {
+    margin-right: 10px;
+    font-size: 17px;
+  }
+  .right-btn-custom {
+    font-size: 10px;
+  }
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-form {
+  width: 470px;
+  padding: 10px 20px;
+}
+
+.register-form-margin {
+  margin-bottom: 16px;
+}
+
+.register-form-button {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  height: 52px;
+  font-size: 18px;
+  line-height: inherit;
+  padding: 8px 18px;
+  border: 1px solid #e4e4e4;
+  border-radius: 4px;
+}
+
+nz-form-label {
+  font-weight: 700;
+  label {
+    font-size: 18px;
+  }
+}
+
+::ng-deep .ant-form-item {
+  margin-bottom: 15px;
+}
+
+::ng-deep .ant-btn-primary {
+  border-color: #262626;
+  background: #262626;
+}
+
+::ng-deep .ant-btn-primary:focus,
+.ant-btn-primary:hover {
+  border-color: #262626;
+  background: #262626;
+}
+
+::ng-deep .ant-btn:focus,
+.ant-btn:hover {
+  border-color: #262626;
+  background: #262626;
+  color: #ffffff;
+}
+::ng-deep .ant-form label {
+  font-size: 16px;
+}
+
+::ng-deep input:focus {
+  border: 1px solid #262626;
+  outline: none;
+}
+::ng-deep h1 {
+  margin: 0;
+}
+
+@media only screen and (max-width: 1199px) {
+  :host {
+    padding-top: 44px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .bread_crumb {
+    margin-top: 25px;
+  }
+
+  .page-title {
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .page-title {
+    margin: 0;
+    h1 {
+      font-size: 28px;
+    }
+  }
+}
