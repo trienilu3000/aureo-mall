@@ -22,6 +22,11 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/aureo-mall",
+            "stylePreprocessorOptions": {
+               "includePaths": [
+                "src/assets/styles"
+              ]
+            },
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [

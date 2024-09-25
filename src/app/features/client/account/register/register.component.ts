@@ -8,7 +8,7 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzCheckboxModule } from 'ng-zorro-antd/checkbox';
 import { NzFormModule } from 'ng-zorro-antd/form';
@@ -46,6 +46,7 @@ export class RegisterComponent {
   constructor(
     private fb: NonNullableFormBuilder,
     private authService: AuthService,
+    private router: Router,
   ) {}
   submitForm(
     firstName: string,
@@ -58,7 +59,7 @@ export class RegisterComponent {
         .register(firstName, lastName, email, password)
         .subscribe({
           next: (res) => {
-            console.log(res);
+            this.router.navigate(['/account/login']);
           },
           error: (error) => {},
         });

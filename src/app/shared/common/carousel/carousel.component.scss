@@ -1,33 +1,37 @@
-.collection {
-  position: relative;
-  display: flex;
+:host {
 }
 
-.collection-wrapper {
+.carousel {
+  position: relative;
+  display: flex;
+  height: 100%;
+}
+
+.carousel-wrapper {
   display: flex;
   overflow: hidden;
 }
 
-.prev-collection {
+.carousel-button-prev {
   position: absolute;
   top: 50%;
   left: 2%;
 }
 
-.next-collection {
+.carousel-button-next {
   position: absolute;
   top: 50%;
   right: 2%;
 }
 
-.collection-items {
+.carousel-items {
   position: relative;
   display: flex;
   justify-content: center;
   flex: 1 0 33.33333333333333%;
 }
 
-.collection-items:hover {
+.carousel-items:hover {
   .upright-btn {
     background-color: #000;
     path {
@@ -36,12 +40,19 @@
   }
 }
 
-.collection-title {
+.carousel-picture {
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+.carousel-title {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 100px;
+  bottom: 7%;
 
   .title {
     font-size: 36px;

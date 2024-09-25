@@ -55,7 +55,7 @@ export class LoginComponent {
         next: (res) => {
           this.authService.setLoginStatus(true);
 
-          this.router.navigate(['/home']);
+          this.router.navigate(['']);
         },
         error: (error) => {
           this.message.create('error', `Login failed! `);

@@ -1,0 +1,41 @@
+:host {
+  padding-top: 111px;
+  display: block;
+}
+::ng-deep button {
+  display: flex;
+  padding: 12px 24px;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 550;
+  background-color: #262626;
+  border: none;
+  border-radius: 5px;
+  color: #ffffff;
+}
+
+::ng-deep .ant-result-extra {
+  justify-content: center;
+  display: flex;
+  margin: 40px 0 0 0;
+}
+::ng-deep svg {
+  width: 20px;
+  margin-right: 3px;
+  color: #ffffff;
+}
+
+::ng-deep .ant-result-icon {
+  display: none;
+}
+
+::ng-deep .ant-result-title {
+  font-size: 220px;
+  font-weight: 700;
+  line-height: normal;
+}
+
+::ng-deep .ant-result-subtitle {
+  font-size: 18px;
+  color: black;
+}

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { NotfoundComponent } from './shared/page/notfound/notfound/notfound.component';
 
 export const routes: Routes = [
   {
@@ -18,6 +19,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    component: NotfoundComponent,
   },
 ];

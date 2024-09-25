@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import { CustomCarouselService } from '../../../core/services/carousel/custom-carousel.service';
 
 @Component({
@@ -14,7 +14,11 @@ export class CarouselComponent implements OnInit {
   @Input() title: string;
   @Input() image: string;
 
-  constructor(private customCarouselService: CustomCarouselService) {}
+  constructor(
+    private customCarouselService: CustomCarouselService,
+    private renderer: Renderer2,
+    private el: ElementRef,
+  ) {}
   ngOnInit(): void {
     this.customCarouselService.title = this.title;
   }
