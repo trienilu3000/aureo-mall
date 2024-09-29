@@ -5,12 +5,12 @@ export const routes: Routes = [
   {
     path: '',
     loadChildren: () =>
-      import('./features/client/client.routes').then((m) => m.CLIENT_ROUTES),
+      import('./core/routes/client/client.routes').then((m) => m.CLIENT_ROUTES),
   },
   {
     path: 'admin',
     loadChildren: () =>
-      import('./features/admin/admin.routes').then((m) => m.ADMIN_ROUTES),
+      import('./core/routes/admin/admin.routes').then((m) => m.ADMIN_ROUTES),
   },
   {
     path: '',

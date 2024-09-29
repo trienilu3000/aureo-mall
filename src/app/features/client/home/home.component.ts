@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { CarouselComponent } from '../../../shared/common/carousel/carousel.component';
+import { CarouselComponent } from 'src/app/shared/common/carousel/carousel.component';
 
 @Component({
   selector: 'app-home',

@@ -47,6 +47,7 @@ import { AuthService } from '../../../core/services/user/auth.service';
         'hidden',
         style({
           top: '0',
+          boxShadow: '0 0 25px 0 rgb(0, 0, 0, 0.1)',
           opacity: 1,
         }),
       ),

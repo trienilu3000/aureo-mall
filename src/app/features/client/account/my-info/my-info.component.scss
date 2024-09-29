@@ -1,0 +1,60 @@
+:host {
+  padding-top: 130px;
+  display: flex;
+  flex-direction: column;
+  a {
+    color: #656565;
+  }
+  button {
+    height: 52px;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 4px;
+  }
+  h1 {
+    padding: 0;
+    margin: 0px;
+  }
+}
+
+.breadcrumb-container {
+  text-align: center;
+}
+
+.breadcrumb-title {
+  font-size: 44px;
+  font-weight: 700;
+}
+
+.breadcrumb-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  column-gap: 8px;
+  padding: 0;
+}
+
+.breadcrumb-link {
+  font-size: 17px;
+}
+
+.breadcrumb-item-current {
+  font-size: 17px;
+}
+
+.breadcrumb-separator {
+  font-size: 9px;
+}
+
+.main-container {
+  display: flex;
+}
+
+.main-sidebar {
+  flex: 0 0 30%;
+}
+
+.main-content {
+  flex: 0 0 70%;
+}

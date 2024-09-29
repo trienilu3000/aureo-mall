@@ -4,12 +4,14 @@ export const CLIENT_ROUTES: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./home/home.component').then((c) => c.HomeComponent),
+      import('../../../features/client/home/home.component').then(
+        (c) => c.HomeComponent,
+      ),
   },
   {
     path: 'account',
     loadChildren: () =>
-      import('./account/account.routes').then((m) => m.ACCOUNT_ROUTES),
+      import('./my-info/account.routes').then((m) => m.ACCOUNT_ROUTES),
   },
   {
     path: 'product',
@@ -19,11 +21,15 @@ export const CLIENT_ROUTES: Routes = [
   {
     path: 'cart',
     loadComponent: () =>
-      import('./cart/cart.component').then((c) => c.CartComponent),
+      import('../../../features/client/cart/cart.component').then(
+        (c) => c.CartComponent,
+      ),
   },
   {
     path: 'checkout',
     loadComponent: () =>
-      import('./checkout/checkout.component').then((c) => c.CheckoutComponent),
+      import('../../../features/client/checkout/checkout.component').then(
+        (c) => c.CheckoutComponent,
+      ),
   },
 ];

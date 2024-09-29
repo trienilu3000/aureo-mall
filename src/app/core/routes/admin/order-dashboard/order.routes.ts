@@ -4,7 +4,9 @@ export const ADMIN_ORDER_ROUTES: Routes = [
   {
     path: '',
     loadComponent: () =>
-      import('./admin-order.component').then((c) => c.AdminOrderComponent),
+      import('src/app/features/admin/order/admin-order.component').then(
+        (c) => c.AdminOrderComponent,
+      ),
   },
   //   {
   //     path: ':id',
