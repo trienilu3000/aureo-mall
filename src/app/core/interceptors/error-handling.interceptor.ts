@@ -17,6 +17,7 @@ export const errorHandlingInterceptor: HttpInterceptorFn = (req, next) => {
         switch (error.status) {
           case 401:
             errorMessage = 'Unauthorized! Please login again.';
+            localStorage.removeItem('accessKey');
             router.navigate(['/unauthorized']);
             return authService.refreshToken().pipe(
               switchMap((res) => {
