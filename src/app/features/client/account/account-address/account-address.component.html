@@ -1,1 +1,61 @@
-<p>account-address works!</p>
+<div class="your-address-title">Your address <span>(0)</span></div>
+<div class="add-address">
+  <button class="add-address-btn">Add a new address</button>
+</div>
+<div class="add-address-wrapper">
+  <form
+    nz-form
+    [nzLayout]="'vertical'"
+    [formGroup]="validateForm"
+    class="address-form"
+  >
+    <nz-form-item>
+      <nz-form-label>First name</nz-form-label>
+      <nz-form-control>
+        <input nz-input formControlName="firstName" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>Last name</nz-form-label>
+      <nz-form-control>
+        <input nz-input formControlName="lastName" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>Company</nz-form-label>
+      <nz-form-control>
+        <input nz-input formControlName="company" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>Address 1</nz-form-label>
+      <nz-form-control>
+        <input nz-input formControlName="address1" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>Address 2</nz-form-label>
+      <nz-form-control>
+        <input nz-input formControlName="address2" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>City</nz-form-label>
+      <nz-form-control>
+        <input nz-input formControlName="city" />
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+      <nz-form-label>Phone</nz-form-label>
+      <nz-form-control>
+        <input nz-input formControlName="phone" />
+      </nz-form-control>
+    </nz-form-item>
+    <div class="address-btn-group">
+      <button class="add-address-btn address-form-margin">Add address</button>
+      <button type="button" class="cancel-button address-form-margin">
+        Cancel
+      </button>
+    </div>
+  </form>
+</div>

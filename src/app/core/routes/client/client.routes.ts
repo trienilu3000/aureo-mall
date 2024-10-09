@@ -11,7 +11,7 @@ export const CLIENT_ROUTES: Routes = [
   {
     path: 'account',
     loadChildren: () =>
-      import('./my-info/account.routes').then((m) => m.ACCOUNT_ROUTES),
+      import('./account/account.routes').then((m) => m.ACCOUNT_ROUTES),
   },
   {
     path: 'product',

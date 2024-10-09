@@ -110,11 +110,7 @@
           ></path>
         </svg>
       </div>
-      <div
-        class="account menu-right-items"
-        routerLink="/account/login"
-        *ngIf="!isLoggedIn"
-      >
+      <div class="account menu-right-items" (click)="handleUserBtn()">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="user">
           <path
             fill="#6563FF"

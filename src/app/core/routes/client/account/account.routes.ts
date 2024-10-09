@@ -1,12 +1,14 @@
 import { Routes } from '@angular/router';
+import { authenticatedGuard } from 'src/app/core/guards/authenticated.guard';
 
 export const ACCOUNT_ROUTES: Routes = [
   {
     path: '',
-    loadComponent: () =>
-      import(
-        '../../../../features/client/account/my-info/my-info.component'
-      ).then((c) => c.MyInfoComponent),
+    loadChildren: () =>
+      import('src/app/core/routes/client/account/my-info.routes').then(
+        (m) => m.MYINFO_ROUTES,
+      ),
+    canActivate: [authenticatedGuard],
   },
   {
     path: 'login',

@@ -1,0 +1,61 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.user-logined {
+  font-size: 18px;
+}
+
+.order-history {
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.order-history-emty {
+  font-size: 18px;
+  color: #656565;
+}
+
+.account-detail {
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.customer-name {
+  display: flex;
+  gap: 100px;
+  width: 100%;
+  font-size: 18px;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 15px 0;
+}
+
+.customer-email {
+  display: flex;
+  gap: 100px;
+  font-size: 18px;
+}
+
+.order-history-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.account-detail-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.view-address-btn {
+  background-color: #262626;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 500;
+}

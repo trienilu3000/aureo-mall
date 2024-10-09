@@ -18,23 +18,29 @@
   </div>
 </div>
 <div class="main">
-  <div class="main-container">
-    <div class="main-sidebar">
-      <ul>
-        <li>
-          <a href="">Dashboard</a>
-        </li>
-        <li>
-          <a href="">Address</a>
-        </li>
-        <li>
-          <a href="">Wishlist</a>
-        </li>
-        <li>
-          <a href="">Log out</a>
-        </li>
-      </ul>
+  <div class="row">
+    <div class="main-container">
+      <div class="main-sidebar">
+        <div class="custom-nav">
+          <ul class="sidebar">
+            <li class="sidebar-items">
+              <a routerLink="/account">Dashboard</a>
+            </li>
+            <li class="sidebar-items">
+              <a routerLink="/account/addresses">Address</a>
+            </li>
+            <li class="sidebar-items">
+              <a href="">Wishlist</a>
+            </li>
+            <li class="sidebar-items">
+              <a (click)="logout()">Log out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="main-content">
+        <router-outlet></router-outlet>
+      </div>
     </div>
-    <div class="main-content">gagagagasdggggggggg</div>
   </div>
 </div>

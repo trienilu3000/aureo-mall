@@ -7,10 +7,32 @@ import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { FormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient } from '@angular/common/http';
-
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
+import { cachingInterceptor } from './core/interceptors/caching.interceptor';
+import { cokkieInterceptor } from './core/interceptors/cokkie.interceptor';
+import { errorHandlingInterceptor } from './core/interceptors/error-handling.interceptor';
+import { loadingSpinnerInterceptor } from './core/interceptors/loading-spinner.interceptor';
+import { loggingInterceptor } from './core/interceptors/logging.interceptor';
 registerLocaleData(en);
-
+export function tokenGetter() {
+  return localStorage.getItem('access_token');
+}
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideNzI18n(en_US), importProvidersFrom(FormsModule), provideAnimationsAsync(), provideHttpClient()]
+  providers: [
+    provideRouter(routes),
+    provideNzI18n(en_US),
+    importProvidersFrom(FormsModule),
+    provideAnimationsAsync(),
+    provideHttpClient(
+      withInterceptors([
+        authInterceptor,
+        // cachingInterceptor,
+        // cokkieInterceptor,
+        errorHandlingInterceptor,
+        // loadingSpinnerInterceptor,
+        // loggingInterceptor,
+      ]),
+    ),
+  ],
 };

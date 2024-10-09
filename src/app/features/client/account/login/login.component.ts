@@ -54,7 +54,6 @@ export class LoginComponent {
       this.authService.login(email, password).subscribe({
         next: (res) => {
           this.authService.setLoginStatus(true);
-
           this.router.navigate(['']);
         },
         error: (error) => {

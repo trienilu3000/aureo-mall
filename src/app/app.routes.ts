@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
-import { NotfoundComponent } from './shared/page/notfound/notfound/notfound.component';
+import { NotfoundComponent } from './shared/pages/notfound/notfound.component';
+import { SERVER_ROUTES } from './core/routes/server/server.routes';
 
 export const routes: Routes = [
   {
@@ -12,11 +13,7 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./core/routes/admin/admin.routes').then((m) => m.ADMIN_ROUTES),
   },
-  {
-    path: '',
-    redirectTo: '',
-    pathMatch: 'full',
-  },
+  ...SERVER_ROUTES,
   {
     path: '**',
     component: NotfoundComponent,

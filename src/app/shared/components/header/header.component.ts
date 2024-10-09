@@ -14,7 +14,7 @@ import { NzListModule } from 'ng-zorro-antd/list';
 import { NzCardModule } from 'ng-zorro-antd/card';
 import { MiniHeaderComponent } from '../mini-header/mini-header.component';
 import { NzDrawerComponent } from '../../common/nz-drawer/nz-drawer.component';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import {
   animate,
   state,
@@ -98,6 +98,7 @@ export class HeaderComponent implements OnInit {
     private renderer: Renderer2,
     private el: ElementRef,
     private authService: AuthService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -106,9 +107,6 @@ export class HeaderComponent implements OnInit {
       this.miniHeaderState = 'hidden';
       this.headerState = 'hidden';
     }
-    this.authService.isLoggedIn.subscribe((loggedIn) => {
-      this.isLoggedIn = loggedIn;
-    });
   }
 
   @HostListener('window:scroll', ['$event'])
@@ -167,6 +165,15 @@ export class HeaderComponent implements OnInit {
     } else {
       this.drawerState.visibleSub = false;
       this.drawerState.visibleMain = true;
+    }
+  }
+
+  handleUserBtn() {
+    const accessKey = localStorage.getItem('accessKey');
+    if (accessKey) {
+      this.router.navigate(['/account']);
+    } else {
+      this.router.navigate(['/account/login']);
     }
   }
 }

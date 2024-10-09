@@ -4,7 +4,7 @@ import { BehaviorSubject, map, Observable } from 'rxjs';
 
 import { isDevMode } from '@angular/core';
 
-import { User } from '../../models/user/auth.models';
+import { User, UserInfo } from '../../models/user/auth.models';
 import { environment } from '../../../../environments/environment';
 @Injectable({
   providedIn: 'root',
@@ -12,13 +12,23 @@ import { environment } from '../../../../environments/environment';
 export class AuthService {
   private url: string;
   private loggedIn = new BehaviorSubject<boolean>(false);
+
   isLoggedIn = this.loggedIn.asObservable();
+
   constructor(private http: HttpClient) {
     if (isDevMode) {
       this.url = environment.apiKey;
     } else {
       this.url = environment.apiKey;
     }
+  }
+
+  getAccessKey(): string | null {
+    return localStorage.getItem('accessKey');
+  }
+
+  setAccessKey(key: string): void {
+    localStorage.setItem('accessKey', key);
   }
 
   login(email: string, password: string): Observable<any> {
@@ -29,10 +39,9 @@ export class AuthService {
       })
       .pipe(
         map((response) => {
-          if (response.token) {
-            this.setLoginStatus(true);
+          if (response.data.accessKey) {
+            this.setAccessKey(response.data.accessKey);
           }
-
           return response;
         }),
       );
@@ -54,5 +63,17 @@ export class AuthService {
       email,
       password,
     });
+  }
+
+  logout(): Observable<any> {
+    return this.http.post<any>(`${this.url}/auth/logout`, null);
+  }
+
+  getMyInfo(): Observable<any> {
+    return this.http.get<UserInfo>(`${this.url}/users/myinfo`);
+  }
+
+  refreshToken(): Observable<any> {
+    return this.http.post<any>(`${this.url}/auth/refresh`, null);
   }
 }

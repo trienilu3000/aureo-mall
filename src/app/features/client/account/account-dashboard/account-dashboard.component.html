@@ -1,1 +1,21 @@
-<p>account-dashboard works!</p>
+<div class="user-logined">
+  Hello, <strong>{{ userInfo?.fullName }}</strong>
+</div>
+<div class="order-history-wrap">
+  <div class="order-history">Order history</div>
+  <p class="order-history-emty">You haven't placed any orders yet.</p>
+</div>
+<div class="account-detail-wrap">
+  <div class="account-detail">Account details</div>
+  <div class="customer-name">
+    <div class="label">Name</div>
+    <div class="name">{{ userInfo?.fullName }}</div>
+  </div>
+  <div class="customer-email">
+    <div class="label">Email</div>
+    <div class="email">trienkongu2k2&#64;gmail.com</div>
+  </div>
+  <div class="view-addresses">
+    <button class="view-address-btn">View addresses <span>(1)</span></button>
+  </div>
+</div>

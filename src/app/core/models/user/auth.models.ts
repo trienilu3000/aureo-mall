@@ -6,9 +6,11 @@ export interface User {
 }
 
 export interface UserInfo {
-  user_id: string;
+  userId: string;
   fullName: string;
+  firstName: string;
+  lastName: string;
   email: string;
   phone: number;
-  role_id: number;
+  roleList: [];
 }
