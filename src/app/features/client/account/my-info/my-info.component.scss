@@ -74,8 +74,18 @@
 
 @media screen and (min-width: 1400px) {
   .row {
-    max-width: 1320px;
+    max-width: 1150px;
     width: 100%;
+  }
+  .main-sidebar {
+    flex: 0 0 auto;
+    width: 16.66666667%;
+  }
+  .main-content {
+    border-left: 1px solid #e4e4e4;
+    flex: 0 0 auto;
+    padding-left: 100px;
+    width: 83.33333333%;
   }
 }
 
