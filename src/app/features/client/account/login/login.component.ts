@@ -16,7 +16,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { AuthService } from '../../../../core/services/user/auth.service';
 import { NzMessageModule, NzMessageService } from 'ng-zorro-antd/message';
 @Component({
-  selector: 'app-login',
+  selector: 'aum-login',
   standalone: true,
   imports: [
     CommonModule,

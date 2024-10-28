@@ -1,6 +1,6 @@
 <div class="navbar">
   <div [@miniHeaderAnimation]="miniHeaderState" class="mini-header">
-    <app-mini-header></app-mini-header>
+    <aum-mini-header></aum-mini-header>
   </div>
   <div [@headerAnimation]="headerState" class="header">
     <div class="menu-drawer">
@@ -19,7 +19,7 @@
         </svg>
       </div>
     </div>
-    <app-nz-drawer
+    <aum-nz-drawer
       [closable]="false"
       [drawerType]="'main'"
       [visible]="drawerState.visibleMain"
@@ -41,9 +41,9 @@
           ></a>
         </li>
       </ul>
-    </app-nz-drawer>
+    </aum-nz-drawer>
 
-    <app-nz-drawer
+    <aum-nz-drawer
       [visible]="drawerState.visibleSub"
       [drawerType]="'sub'"
       [placement]="'left'"
@@ -58,7 +58,7 @@
           </a>
         </li>
       </ul>
-    </app-nz-drawer>
+    </aum-nz-drawer>
     <ng-template #drawerTitleMain>
       <div class="custom-drawer-title">
         <span>Menu</span>
@@ -148,7 +148,7 @@
     </div>
   </div>
 </div>
-<app-nz-drawer
+<aum-nz-drawer
   class="drawer-search"
   [visible]="drawerState.isSearch"
   [drawerType]="'search'"
@@ -238,4 +238,4 @@
       </div>
     </div>
   </div>
-</app-nz-drawer>
+</aum-nz-drawer>

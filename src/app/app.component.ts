@@ -5,7 +5,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NgxSpinnerModule } from 'ngx-spinner';
 @Component({
-  selector: 'app-root',
+  selector: 'aum-root',
   standalone: true,
   imports: [
     RouterOutlet,

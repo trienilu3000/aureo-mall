@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-admin-product-list',
+  selector: 'aum-admin-product-list',
   standalone: true,
   imports: [],
   templateUrl: './admin-product-list.component.html',
-  styleUrl: './admin-product-list.component.scss'
+  styleUrl: './admin-product-list.component.scss',
 })
-export class AdminProductListComponent {
-
-}
+export class AdminProductListComponent {}

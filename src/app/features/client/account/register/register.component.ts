@@ -16,7 +16,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { AuthService } from '../../../../core/services/user/auth.service';
 
 @Component({
-  selector: 'app-register',
+  selector: 'aum-register',
   standalone: true,
   imports: [
     CommonModule,

@@ -3,11 +3,11 @@ import { NzDropDownModule } from 'ng-zorro-antd/dropdown';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 
 @Component({
-  selector: 'app-mini-header',
+  selector: 'aum-mini-header',
   standalone: true,
-  imports: [NzDropDownModule,NzIconModule],
+  imports: [NzDropDownModule, NzIconModule],
   templateUrl: './mini-header.component.html',
-  styleUrl: './mini-header.component.scss'
+  styleUrl: './mini-header.component.scss',
 })
 export class MiniHeaderComponent {
   isOpen: boolean = false;

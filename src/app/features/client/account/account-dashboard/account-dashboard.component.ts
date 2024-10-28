@@ -4,7 +4,7 @@ import { AuthService } from 'src/app/core/services/user/auth.service';
 import { MyInfoService } from 'src/app/core/services/user/my-info.service';
 
 @Component({
-  selector: 'app-account-dashboard',
+  selector: 'aum-account-dashboard',
   standalone: true,
   imports: [],
   templateUrl: './account-dashboard.component.html',

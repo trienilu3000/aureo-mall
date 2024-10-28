@@ -2,7 +2,7 @@ import { Component, ElementRef, Input, OnInit, Renderer2 } from '@angular/core';
 import { CustomCarouselService } from '../../../core/services/carousel/custom-carousel.service';
 
 @Component({
-  selector: 'app-carousel',
+  selector: 'aum-carousel',
   standalone: true,
   imports: [],
   templateUrl: './carousel.component.html',

@@ -18,7 +18,7 @@ import { MyInfoService } from 'src/app/core/services/user/my-info.service';
 import { FormDialogHandlerComponent } from 'src/app/shared/common/form-dialog-handler/form-dialog-handler.component';
 
 @Component({
-  selector: 'app-account-address',
+  selector: 'aum-account-address',
   standalone: true,
   imports: [
     FormsModule,
@@ -26,14 +26,14 @@ import { FormDialogHandlerComponent } from 'src/app/shared/common/form-dialog-ha
     ReactiveFormsModule,
     NzIconModule,
     NzButtonModule,
-    CommonModule
+    CommonModule,
   ],
   templateUrl: './account-address.component.html',
   styleUrl: './account-address.component.scss',
 })
-export class AccountAddressComponent implements OnInit{
+export class AccountAddressComponent implements OnInit {
   isAddressVisible: boolean = false;
-  items :UserInfo[] = []
+  items: UserInfo[] = [];
 
   validateForm: FormGroup<{
     firstName: FormControl<string>;
@@ -55,19 +55,22 @@ export class AccountAddressComponent implements OnInit{
   constructor(
     private fb: NonNullableFormBuilder,
     private router: Router,
-    private myInfoService : MyInfoService,
-    private modal: NzModalService
+    private myInfoService: MyInfoService,
+    private modal: NzModalService,
   ) {}
 
-  ngOnInit(): void {
-
-  }
+  ngOnInit(): void {}
 
   openAddDialog(): void {
     const fields = [
       { name: 'name', label: 'Name', type: 'text', required: true },
-      { name: 'description', label: 'Description', type: 'textarea', required: true },
-      { name: 'price', label: 'Price', type: 'number', required: false }
+      {
+        name: 'description',
+        label: 'Description',
+        type: 'textarea',
+        required: true,
+      },
+      { name: 'price', label: 'Price', type: 'number', required: false },
     ];
 
     const modalRef = this.modal.create({
@@ -76,9 +79,9 @@ export class AccountAddressComponent implements OnInit{
       // nzData: { fields: fields }
     });
 
-    modalRef.afterClose.subscribe(result => {
+    modalRef.afterClose.subscribe((result) => {
       if (result) {
-        this.items.push(result); 
+        this.items.push(result);
       }
     });
   }
@@ -86,8 +89,13 @@ export class AccountAddressComponent implements OnInit{
   openEditDialog(item): void {
     const fields = [
       { name: 'name', label: 'Name', type: 'text', required: true },
-      { name: 'description', label: 'Description', type: 'textarea', required: true },
-      { name: 'price', label: 'Price', type: 'number', required: false }
+      {
+        name: 'description',
+        label: 'Description',
+        type: 'textarea',
+        required: true,
+      },
+      { name: 'price', label: 'Price', type: 'number', required: false },
     ];
 
     const modalRef = this.modal.create({
@@ -96,21 +104,19 @@ export class AccountAddressComponent implements OnInit{
       // nzData: { fields: fields, item: item }
     });
 
-    modalRef.afterClose.subscribe(result => {
+    modalRef.afterClose.subscribe((result) => {
       if (result) {
         const index = this.items.indexOf(item);
-        this.items[index] = result; 
+        this.items[index] = result;
       }
     });
   }
-  
-  getMyAddress(){
+
+  getMyAddress() {
     this.myInfoService.getMyAddress().subscribe({
-      next :res => {
-        console.log('ha',res)
-      }
-    })
+      next: (res) => {
+        console.log('ha', res);
+      },
+    });
   }
-
-
 }

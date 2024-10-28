@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { CarouselComponent } from 'src/app/shared/common/carousel/carousel.component';
 
 @Component({
-  selector: 'app-home',
+  selector: 'aum-home',
   standalone: true,
   imports: [CommonModule, CarouselComponent],
   templateUrl: './home.component.html',

@@ -1,12 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-admin-product-edit',
+  selector: 'aum-admin-product-edit',
   standalone: true,
   imports: [],
   templateUrl: './admin-product-edit.component.html',
-  styleUrl: './admin-product-edit.component.scss'
+  styleUrl: './admin-product-edit.component.scss',
 })
-export class AdminProductEditComponent {
-
-}
+export class AdminProductEditComponent {}

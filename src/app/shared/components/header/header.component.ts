@@ -25,7 +25,7 @@ import {
 import { AuthService } from '../../../core/services/user/auth.service';
 
 @Component({
-  selector: 'app-header',
+  selector: 'aum-header',
   standalone: true,
   imports: [
     NzInputModule,

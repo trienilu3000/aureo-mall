@@ -4,7 +4,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { AuthService } from 'src/app/core/services/user/auth.service';
 
 @Component({
-  selector: 'app-my-info',
+  selector: 'aum-my-info',
   standalone: true,
   imports: [NzIconModule, RouterOutlet, RouterLink],
   templateUrl: './my-info.component.html',

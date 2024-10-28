@@ -10,7 +10,7 @@ import { NzDrawerModule, NzDrawerPlacement } from 'ng-zorro-antd/drawer';
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'app-nz-drawer',
+  selector: 'aum-nz-drawer',
   standalone: true,
   imports: [CommonModule, NzDrawerModule],
   templateUrl: './nz-drawer.component.html',
