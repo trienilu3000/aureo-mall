@@ -10,13 +10,11 @@ export const errorHandlingInterceptor: HttpInterceptorFn = (req, next) => {
 
   return next(req).pipe(
     catchError((error: HttpErrorResponse) => {
-      let errorMessage = 'An unknown error occurred!';
       if (error.error instanceof ErrorEvent) {
-        errorMessage = `Error: ${error.error.message}`;
+   
       } else {
-        switch (error.status) {
-          case 401:
-            errorMessage = 'Unauthorized! Please login again.';
+        switch (error.error.error.errorCode) {
+          case 'TOKEN_EXPIRED':
             localStorage.removeItem('accessKey');
             router.navigate(['/unauthorized']);
             return authService.refreshToken().pipe(
@@ -37,24 +35,23 @@ export const errorHandlingInterceptor: HttpInterceptorFn = (req, next) => {
               }),
             );
           case 403:
-            errorMessage =
-              'You do not have permission to access this resource.';
+        
             router.navigate(['/forbidden']);
             break;
           case 404:
-            errorMessage = 'Resource not found!';
+           
             router.navigate(['/notfound']);
             break;
           case 500:
-            errorMessage = 'Internal server error. Please try again later.';
+           
             router.navigate(['/internal-server-error']);
             break;
           default:
-            errorMessage = `Error Code: ${error.status}\nMessage: ${error.message}`;
+            break;
         }
       }
 
-      return throwError(() => new Error(errorMessage));
+      return throwError(() => new Error());
     }),
   );
 };

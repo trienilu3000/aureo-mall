@@ -1,0 +1,31 @@
+<nz-modal [(nzVisible)]="isVisible" nzTitle="Dynamic Form" (nzOnCancel)="onCancel()" (nzOnOk)="onSubmit()">
+    <form [formGroup]="itemForm">
+      <div *ngFor="let field of fields">
+        <nz-form-item>
+          <nz-form-label [nzRequired]="field.required">{{ field.label }}</nz-form-label>
+          <nz-form-control>
+
+            <input nz-input *ngIf="field.type === 'text'" formControlName="{{field.name}}" />
+
+            <textarea nz-input *ngIf="field.type === 'textarea'" formControlName="{{field.name}}"></textarea>
+
+            <input nz-input *ngIf="field.type === 'number'" formControlName="{{field.name}}" type="number" />
+
+            <nz-select *ngIf="field.type === 'select'" formControlName="{{field.name}}" nzPlaceHolder="Select an option">
+              <nz-option *ngFor="let option of field.options" [nzValue]="option.value" [nzLabel]="option.label"></nz-option>
+            </nz-select>
+  
+            <label nz-checkbox *ngIf="field.type === 'checkbox'" formControlName="{{field.name}}">
+              {{ field.label }}
+            </label>
+
+            <nz-radio-group *ngIf="field.type === 'radio'" formControlName="{{field.name}}">
+              <label nz-radio *ngFor="let option of field.options" [nzValue]="option.value">{{ option.label }}</label>
+            </nz-radio-group>
+            
+          </nz-form-control>
+        </nz-form-item>
+      </div>
+    </form>
+  </nz-modal>
+  

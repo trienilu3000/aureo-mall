@@ -1,8 +1,8 @@
 <div class="your-address-title">Your address <span>(0)</span></div>
 <div class="add-address">
-  <button class="add-address-btn">Add a new address</button>
+  <button class="submit-btn" (click)="openAddDialog()">Add a new address</button>
 </div>
-<div class="add-address-wrapper">
+<!-- <div class="add-address-wrapper" *ngIf="isAddressVisible">
   <form
     nz-form
     [nzLayout]="'vertical'"
@@ -21,41 +21,74 @@
         <input nz-input formControlName="lastName" />
       </nz-form-control>
     </nz-form-item>
+   
     <nz-form-item>
-      <nz-form-label>Company</nz-form-label>
+      <nz-form-label>Province/City</nz-form-label>
       <nz-form-control>
-        <input nz-input formControlName="company" />
+        <input nz-input formControlName="province" />
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-label>Address 1</nz-form-label>
+      <nz-form-label>District</nz-form-label>
       <nz-form-control>
-        <input nz-input formControlName="address1" />
+        <input nz-input formControlName="district" />
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-label>Address 2</nz-form-label>
+      <nz-form-label>Ward/Commune</nz-form-label>
       <nz-form-control>
-        <input nz-input formControlName="address2" />
+        <input nz-input formControlName="ward" />
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-label>City</nz-form-label>
+      <nz-form-label>Specific address</nz-form-label>
       <nz-form-control>
-        <input nz-input formControlName="city" />
+        <input nz-input formControlName="address" />
       </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-      <nz-form-label>Phone</nz-form-label>
+      <nz-form-label>Phone number</nz-form-label>
       <nz-form-control>
         <input nz-input formControlName="phone" />
       </nz-form-control>
     </nz-form-item>
-    <div class="address-btn-group">
-      <button class="add-address-btn address-form-margin">Add address</button>
-      <button type="button" class="cancel-button address-form-margin">
+    <div class="form-group-btn">
+      <button class="submit-btn">Add address</button>
+      <button type="button" class="cancel-btn" (click)="handleCancelBtn()">
         Cancel
       </button>
     </div>
   </form>
+</div> -->
+<div class="account-detail-wrap">
+  <div class="account-detail">Account details</div>
+  <div class="customer-list-items">
+    <div class="label">Name</div>
+    <div class="name">ga</div>
+  </div>
+  <div class="customer-list-items">
+    <div class="label">Province/City</div>
+    <div class="email">ga</div>
+  </div>
+  <div class="customer-list-items">
+    <div class="label">District</div>
+    <div class="email">ga</div>
+  </div>
+  <div class="customer-list-items">
+    <div class="label">Ward/Commune</div>
+    <div class="email">ga</div>
+  </div>
+  <div class="customer-list-items">
+    <div class="label">Specific address</div>
+    <div class="email">ga</div>
+  </div>
+  <div class="customer-list-items">
+    <div class="label">Phone</div>
+    <div class="email">ga</div>
+  </div>
+  <div class="form-group-btn">
+    <button class="submit-btn">Edit</button>
+    <button class="cancel-btn">Delete</button>
+  </div>
 </div>
+

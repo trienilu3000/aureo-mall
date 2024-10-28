@@ -11,6 +11,9 @@ export interface UserInfo {
   firstName: string;
   lastName: string;
   email: string;
-  phone: number;
+  phoneNumber: number;
   roleList: [];
+  district : string;
+  ward : string;
+  address : string;
 }

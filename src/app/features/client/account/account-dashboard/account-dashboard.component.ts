@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserInfo } from 'src/app/core/models/user/auth.models';
 import { AuthService } from 'src/app/core/services/user/auth.service';
+import { MyInfoService } from 'src/app/core/services/user/my-info.service';
 
 @Component({
   selector: 'app-account-dashboard',
@@ -11,14 +12,14 @@ import { AuthService } from 'src/app/core/services/user/auth.service';
 })
 export class AccountDashboardComponent implements OnInit {
   userInfo: UserInfo;
-  constructor(private authService: AuthService) {}
+  constructor(private myInfoService: MyInfoService) {}
 
   ngOnInit(): void {
     this.getMyInfo();
   }
 
   getMyInfo() {
-    this.authService.getMyInfo().subscribe({
+    this.myInfoService.getMyInfo().subscribe({
       next: (res) => {
         this.userInfo = res.data;
       },

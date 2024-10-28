@@ -69,9 +69,7 @@ export class AuthService {
     return this.http.post<any>(`${this.url}/auth/logout`, null);
   }
 
-  getMyInfo(): Observable<any> {
-    return this.http.get<UserInfo>(`${this.url}/users/myinfo`);
-  }
+
 
   refreshToken(): Observable<any> {
     return this.http.post<any>(`${this.url}/auth/refresh`, null);
