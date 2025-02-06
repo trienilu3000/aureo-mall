@@ -2,240 +2,190 @@
   <div [@miniHeaderAnimation]="miniHeaderState" class="mini-header">
     <aum-mini-header></aum-mini-header>
   </div>
-  <div [@headerAnimation]="headerState" class="header">
-    <div class="menu-drawer">
-      <button class="bars-btn" nzType="primary" (click)="openDrawer('main')">
-        <i class="fa-solid fa-bars-staggered"></i>
-      </button>
-      <div
-        class="search-mobile menu-right-items"
-        (click)="openDrawer('search')"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="search">
-          <path
-            fill="#000"
-            d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"
-          ></path>
-        </svg>
-      </div>
-    </div>
-    <aum-nz-drawer
-      [closable]="false"
-      [drawerType]="'main'"
-      [visible]="drawerState.visibleMain"
-      placement="left"
-      width="320px"
-      [drawerTitle]="drawerTitleMain"
-      (onClose)="closeDrawer($event)"
-    >
-      <ul nz-list nzBordered nzSize="large">
-        <li *ngFor="let item of menus" nz-list-item nzNoFlex>
-          <a (click)="openDrawer('sub')"
-            ><span>{{ item }}</span>
-            <span
-              nz-icon
-              nzType="right"
-              nzTheme="outline"
-              nzAlign="right"
-            ></span
-          ></a>
-        </li>
-      </ul>
-    </aum-nz-drawer>
-
-    <aum-nz-drawer
-      [visible]="drawerState.visibleSub"
-      [drawerType]="'sub'"
-      [placement]="'left'"
-      [width]="'320px'"
-      [drawerTitle]="drawerTitleSub"
-      (onClose)="closeDrawer($event)"
-    >
-      <ul nz-list nzBordered nzSize="large">
-        <li *ngFor="let item of menus" nz-list-item nzNoFlex>
-          <a
-            ><span>{{ item }}</span>
-          </a>
-        </li>
-      </ul>
-    </aum-nz-drawer>
-    <ng-template #drawerTitleMain>
-      <div class="custom-drawer-title">
-        <span>Menu</span>
-        <button
-          nz-button
-          class="close-btn-custom"
-          nzType="link"
-          nzShape="circle"
-          (click)="closeDrawer('main')"
-        >
-          <i nz-icon nzType="close"></i>
-        </button>
-      </div>
-    </ng-template>
-    <ng-template #drawerTitleSub>
-      <div class="custom-drawer-titlesub">
-        <button
-          nz-button
-          class="close-btn-custom"
-          nzType="link"
-          nzShape="circle"
-          (click)="closeDrawer('sub')"
-        >
-          <span nz-icon nzType="left" nzTheme="outline"></span>
-        </button>
-        <span class="custom-title">Ga</span>
-      </div>
-    </ng-template>
-    <div class="menu-logo">
-      <a routerLink="/">
-        <img
-          src="../assets/images/demo-fashion-collection-logo-dark.svg"
-          alt=""
-      /></a>
-    </div>
-    <div class="menu-column">
-      <ul>
-        <li *ngFor="let item of menus">
-          <a>{{ item }}</a>
-        </li>
-      </ul>
-    </div>
-    <div class="menu-right">
-      <div class="search menu-right-items" (click)="openDrawer('search')">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="search">
-          <path
-            fill="#000"
-            d="M21.71,20.29,18,16.61A9,9,0,1,0,16.61,18l3.68,3.68a1,1,0,0,0,1.42,0A1,1,0,0,0,21.71,20.29ZM11,18a7,7,0,1,1,7-7A7,7,0,0,1,11,18Z"
-          ></path>
-        </svg>
-      </div>
-      <div class="account menu-right-items" (click)="handleUserBtn()">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="user">
-          <path
-            fill="#6563FF"
-            d="M15.71,12.71a6,6,0,1,0-7.42,0,10,10,0,0,0-6.22,8.18,1,1,0,0,0,2,.22,8,8,0,0,1,15.9,0,1,1,0,0,0,1,.89h.11a1,1,0,0,0,.88-1.1A10,10,0,0,0,15.71,12.71ZM12,12a4,4,0,1,1,4-4A4,4,0,0,1,12,12Z"
-          ></path>
-        </svg>
-      </div>
-      <div class="wishlist menu-right-items">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="heart">
-          <path
-            fill="#6563FF"
-            d="M20.16,5A6.29,6.29,0,0,0,12,4.36a6.27,6.27,0,0,0-8.16,9.48l6.21,6.22a2.78,2.78,0,0,0,3.9,0l6.21-6.22A6.27,6.27,0,0,0,20.16,5Zm-1.41,7.46-6.21,6.21a.76.76,0,0,1-1.08,0L5.25,12.43a4.29,4.29,0,0,1,0-6,4.27,4.27,0,0,1,6,0,1,1,0,0,0,1.42,0,4.27,4.27,0,0,1,6,0A4.29,4.29,0,0,1,18.75,12.43Z"
-          ></path>
-        </svg>
-      </div>
-      <div class="cart menu-right-items" routerLink="/cart">
+  <div [@headerAnimation]="headerState" class="site-header">
+    <div class="logo-container">
+      <a routerLink="/" class="site-logo">
         <svg
+          viewBox="0 0 1024 1024"
+          version="1.1"
           xmlns="http://www.w3.org/2000/svg"
-          enable-background="new 0 0 48 48"
-          viewBox="0 0 48 48"
+          width="54px"
+          height="54px"
+          class="logo-svg-icon"
+          alt="temu"
+          aria-label="temu"
+          fill="#fb7701"
+          stroke="none"
+          stroke-width="18.962962962962962"
+        >
+          <title>temu</title>
+          <path
+            d="M796.4 0c125.7 0 227.6 101.9 227.6 227.6l0 568.8c0 125.7-101.9 227.6-227.6 227.6l-568.8 0c-125.7 0-227.6-101.9-227.6-227.6l0-568.8c0-125.7 101.9-227.6 227.6-227.6l568.8 0z m-256 531.9l-13.6 0c-12.1 0-22 9.8-21.9 21.9l0 150.5c0 12.1 9.8 22 21.9 22 12.1 0 22-9.8 22-22l0-98.8 37 52.2c7.7 10.8 23.7 10.8 31.5 0l37-52.2 0 98.8c0 12.1 9.8 22 22 22 12.1 0 22-9.8 21.9-22l0-150.5c0-12.1-9.8-22-21.9-21.9l-13.6 0c-5.2 0-10.2 2.5-13.2 6.8l-47.9 72-48-72c-3-4.3-7.9-6.8-13.2-6.8z m340.2 0c-12.1 0-22 9.8-22 21.9l0 91.9c0 28.9-16.3 43.7-43.1 43.6-26.8 0-43.1-15.3-43-44.9l0-90.6c0-12.1-9.8-22-22-21.9-12.1 0-22 9.8-21.9 21.9l0 91.6c0 53.6 32.8 80.9 86.4 80.9 53.6 0 87.6-27 87.5-82.2l0-90.3c0-12.1-9.8-22-21.9-21.9z m-616.9 0l-128.3 0c-12.1 0-22 9.8-22 21.9 0 12.1 9.8 22 22 22l42.2 0 0 128.3c0 12.1 9.8 22 21.9 22 12.1 0 22-9.8 22-22l0-128.3 42.2 0c12.1 0 22-9.8 22-22 0-12.1-9.8-22-22-21.9z m189.9 0l-118.9 0c-12.1 0-22 9.8-22 21.9l0 150.3c0 12.1 9.8 22 22 22l118.9 0c12.1 0 22-9.8 21.9-22 0-12.1-9.8-22-21.9-22l-97 0 0-31.2 84.4 0c12.1 0 22-9.8 22-21.9 0-12.1-9.8-22-22-22l-84.4 0 0-31.2 97 0c12.1 0 22-9.8 21.9-22 0-12.1-9.8-22-21.9-21.9z m-214.5-229.4l-4.1 0.1c-17.1 1.1-28.8 8.5-35.4 18.5-7.7-11.5-22.1-19.6-43.8-18.4l-0.5 0.7c-2.5 4-11.9 21.9 3.3 41.4 3.1 3.3 10.7 12.6 7.6 24.5l-44.1 71.3c-3.6 5.8-2 13.3 3.5 17.2 11.4 8 34.3 19 74 19 39.6 0 62.5-11 73.9-19l1.5-1.3c4.3-4.1 5.2-10.7 2-15.9l-44-71.3 0.3 1.3-0.5-2c-2.4-10.7 3.6-19.2 6.9-23l0.8-0.8c15.3-19.5 5.8-37.3 3.3-41.4l-0.4-0.7-4.3-0.2z m142.8 33.4c-15.1-30-34.7-35.1-44.5-27.3-7.5 6-24.8 29.7-26 31.3-19.1 27.1-18 33.7 6.5 49.1 13.8 8.7 24.9-2.5 29.7-5.8-2.3 14.3-9.3 36.8-19.8 52.6-5.7-4.3-9.9-7.6-12.5-10-3.3-3-8.3-2.8-11.5 0.3-1.5 1.5-2.3 3.5-2.2 5.7 0.1 2.1 1 4.1 2.5 5.5 25.5 23.3 59 36.5 94.7 36.6 35.8 0 69.5-13.2 95-36.6 3.3-3 3.4-8 0.4-11.2-3.2-3.2-8.2-3.3-11.5-0.3-2 1.8-4 3.5-6.1 5.2l-11.2-25c-1.8-4.3-3.8-9.7-6-16.2 1.1-2.7 3.4-5.3 6.7-8.7 2.4-2.4 4.4-4.8 5.9-7.1 7.4-11.7 3.2-18.6 0.9-23.2-5.3-10.8-13.6-7.3-19.6-0.9-7.4 7.8-14.6 11.2-26.2 13.8-9.7 2.2-17.2 1.1-23.4-2.8-8.6-5.3-21.8-25-21.8-25z m277.3-30.5c-32 30.4-1.3 96.5-59.5 124.6-6.4 3.1-11.7-7.1-20.3-7.1-24.3 0.2-70.7 21.6-72.5 32.4-1.5 8.9 18.3 16 76.7 16.1 50.8 0 67.2-77.3 85-77.4 17.8 0 9.5 70.1 7.6 77.4l18.6 0c-1.6-7.3-2.8-29.3-2.7-60.4 0-31.1 5.6-38 10.1-61.5 3.9-20.4-26.3-38.1-43-44.1z m182.4 2.5l-52.1 0c-33.7 0-61.7 26.1-64 59.7l-3.8 53.9c-1.8 25.6 18.5 47.3 44.1 47.4l99.4 0c25.7 0 45.9-21.7 44.2-47.4l-3.8-53.9c-2.4-33.6-30.3-59.7-64-59.7z m-442.6 124c15.7 0 27.7 7.7 32.1 22-10.7 2.8-21.4 4.2-32.3 4.1-16.4 0-22.2-1.5-32.7-4.3 4.2-12.6 18.1-21.8 32.9-21.8z m392.9-79.3l0 1.5c0 13 10.6 23.7 23.6 23.7 13 0 23.7-10.6 23.7-23.7l0-1.5c0-5.8 21-5.8 21 0l0 1.5c0 24.6-20 44.6-44.7 44.6-24.6 0-44.6-20-44.6-44.6l0-1.5c0-5.8 20.9-5.8 21 0z"
+          ></path></svg
+      ></a>
+    </div>
+    <div class="menu-list">
+      <div class="menu-items-list">
+        <div class="menu-item">
+          <a class="menu-item-link">
+            <svg
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="menu-item-icon"
+              alt=""
+              aria-label=""
+              fill="#ffffff"
+              aria-hidden="true"
+            >
+              <title>Best Sellers</title>
+              <path
+                d="M542.7 34.1c58.8 0 110.7 40.1 127.6 98.8l0.7 2.5 0.5 1.1c0.3 0.9 0.6 1.8 0.9 2.7l0.7 2.8c6.2 29.5 9.5 59.1 9.5 88.8 0 26.2-2.4 52.3-7.2 78l-1.8 9.2 145.4 0.1c2.5 0 5 0.2 7.5 0.5l1.1 0.1 2.7 0.2c41.3 3.2 79.2 25.6 102.2 61.6l2.6 4.2c15.3 25.2 22.4 54.8 20.2 84.5l0.1-1.4 0.1-1.1 0 1.1c0.1 5.4-0.3 10.6-1.2 15.3l-0.8 3.4-74 340c-2.1 8.1-5.5 15.7-10.1 22.4l0.4-0.8 1.2-1.8-1.6 3.2c-9.9 18.7-23.9 34.8-40.8 47l-4.6 3.2c-21.9 14.4-47 21.9-72.5 21.9-0.9 0-1.7 0-2.5-0.1l-612.3-0.2c-36.4 0-66.4-29.7-68.2-67.4l-0.1-3.6c-0.1-1.6-0.2-2.7 0-4l0.3-389.6c0-34.8 24.3-64.4 57.2-70.1l3.4-0.4c102-11.9 169.3-32.5 200-59 42.2-36.2 80.1-108.7 80.1-154.3 0-78.4 59-138.7 133.3-138.8z m-218.4 460.8c-28.3 0-51.2 22.9-51.2 51.2l0 204.8c0 28.3 22.9 51.2 51.2 51.2 28.3 0 51.2-22.9 51.2-51.2l0-204.8c0-28.3-22.9-51.2-51.2-51.2z"
+              ></path>
+            </svg>
+            <span class="menu-item-title">Best Sellers</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a class="menu-item-link">
+            <svg
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="menu-item-icon"
+              alt=""
+              aria-label=""
+              fill="#ffffff"
+              aria-hidden="true"
+            >
+              <title>5-Star Rated</title>
+              <path
+                d="M848.7 133.8c62.1 0 112.5 52.1 112.4 116.3l0 481c0 64.2-50.4 116.3-112.4 116.3l-212.5 0c-8.9 0-17.5 3.6-23.6 10.1l-86.8 90.5-0.8 0.8c-13 12.6-33.7 12.3-46.4-0.6l-88.5-90.9c-6.2-6.3-14.6-9.9-23.4-9.9l-191.4 0c-59.3 0-107.9-47.4-112.1-107.6l-0.3-8.7 0-481c0-64.2 50.4-116.3 112.4-116.3z m-329.7 178.4c-10-3.4-20.8 2.1-24.1 12.4l-34.2 106.1-108.2 0.8c-6 0-11.7 3-15.2 8-6.3 8.8-4.5 21.1 4 27.6l87.1 66.4-32.7 106.6c-1.8 5.9-0.8 12.4 2.7 17.4 6.1 8.9 18.1 10.9 26.6 4.6l88-65.1 88 65.1c4.9 3.6 11.1 4.6 16.8 2.7 10-3.3 15.6-14.4 12.4-24.7l-32.6-106.6 87-66.4c4.8-3.7 7.7-9.5 7.8-15.7 0.1-10.9-8.4-19.8-19-19.9l-108.1-0.8-34.2-106.1c-1.9-5.9-6.4-10.5-12.1-12.4z"
+              ></path>
+            </svg>
+            <span class="menu-item-title">5-Star Rated</span>
+          </a>
+        </div>
+        <div class="menu-item">
+          <a class="menu-item-link"
+            ><svg
+              viewBox="0 0 1024 1024"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+              width="1em"
+              height="1em"
+              class="menu-item-icon"
+              alt=""
+              aria-label=""
+              fill="#ffffff"
+              aria-hidden="true"
+            >
+              <title>Luner year sale</title>
+              <path
+                d="M130.6 759.6c19.2 27 41.3 53.3 66.3 78.2 25 25 51.3 47.2 78.4 66.4l-216.9 72.2 72.2-216.8z m84.3-252.9c31.2 57.5 77.9 119 136 177.2 58.2 58.2 119.7 104.8 177.2 136l-200.5 66.8c-34.2-21.2-68-47.9-99.9-79.7-31.8-31.8-58.5-65.7-79.6-99.8l66.8-200.5z m95.8-287.3c0.1 44 88.1 165.2 213.8 290.9 121.8 121.8 239.4 208.2 286.6 213.6l4.3 0.2-228.3 76.2c-61.4-26.5-135.6-77.4-205.4-147.2-69.8-69.8-120.7-144-147.1-205.4l76.1-228.3z m566.2 365.8c20.8 16.3 34.3 33 41.5 45.3 9 15.5 3.8 35.4-11.7 44.4-15.5 9-35.4 3.8-44.4-11.7l-1.8-2.7c-4.1-6-12-14.9-23.7-24.2-31.5-24.7-72.8-35.8-127-25.2-17.6 3.4-34.6-8-38.1-25.6-3.4-17.6 8-34.6 25.6-38.1 73.4-14.4 133.7 1.8 179.6 37.8z m30.3-159.9c23.3 9.7 40.8 19.6 51.1 26.6 14.8 10.1 18.7 30.2 8.6 45.1-10.1 14.8-30.2 18.7-45 8.6-7-4.7-20.8-12.5-39.8-20.4-58.4-24.4-118.4-29.7-173.3-5.2-20.4 9.1-39.9 22.3-58.4 40-12.9 12.4-33.5 12-45.9-0.9-12.4-12.9-12-33.5 0.9-45.8 23.8-22.9 49.6-40.4 77-52.6 73.8-32.9 151.4-26 224.8 4.6z m-336.1-360.6c7 10.3 16.9 27.9 26.6 51.2 30.7 73.4 37.5 151 4.6 224.8-12.2 27.3-29.6 53.1-52.5 76.9-12.4 12.9-33 13.3-45.9 0.9-12.9-12.4-13.3-33-0.9-45.9 17.8-18.5 30.9-37.9 40-58.4 24.5-54.9 19.2-115-5.2-173.3-7.9-18.9-15.7-32.7-20.4-39.7-10.1-14.8-6.2-35 8.6-45.1 14.8-10.1 35-6.2 45.1 8.6z m-178.8 39.8c12.3 7.2 28.9 20.7 45.3 41.4 36 45.9 52.2 106.2 37.8 179.6-3.4 17.6-20.5 29.1-38.1 25.6-17.6-3.4-29.1-20.5-25.6-38 10.6-54.2-0.4-95.5-25.2-127.1-9.2-11.7-18.2-19.6-24.1-23.7l-2.7-1.8c-15.5-9-20.7-28.9-11.8-44.3 9-15.5 28.9-20.7 44.4-11.7z m422.6 59.7l-10.7 62.4 45.3 44.2-62.5 9.2-28.1 56.7-28-56.7-62.7-9.2 45.3-44.2-10.6-62.4 56 29.5 56-29.5z"
+              ></path>
+            </svg>
+            <span class="menu-item-title">Luner year sale</span></a
+          >
+        </div>
+        <div class="menu-item">
+          <a class="menu-item-link">
+            <span class="menu-item-title">New Arrivals</span></a
+          >
+        </div>
+        <div class="menu-item">
+          <a class="menu-item-link">
+            <span class="menu-item-title">Categories</span></a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="search-bar">
+      <input type="text" class="search-bar-input" placeholder="Search..." />
+      <button class="search-bar-button">
+        <svg
+          viewBox="0 0 1024 1024"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          width=".2rem"
+          height=".2rem"
+          class="search-bar-icon"
+          alt="common_successful"
+          aria-label="Search "
+          fill="#ffffff"
         >
           <path
-            d="M36.8,45.8H11.2c-3.7,0-6.7-3-6.7-6.7V13.4c0-1.1,0.9-2,2-2h35.1c1.1,0,2,0.9,2,2v25.6C43.5,42.8,40.5,45.8,36.8,45.8z     M8.4,15.4v23.7c0,1.6,1.3,2.8,2.8,2.8h25.5c1.6,0,2.8-1.3,2.8-2.8V15.4H8.4z"
+            d="M486.4 102.4c212.1 0 384 171.9 384 384 0 78.4-23.5 151.3-63.8 212l147.5 132.4c21 18.9 22.8 51.3 3.9 72.3-17.4 19.4-46.4 22.4-67.2 7.9l-5.1-4-146.5-131.5c-67.5 59.1-156 94.9-252.8 94.9-212.1 0-384-171.9-384-384 0-212.1 171.9-384 384-384z m0 102.4c-155.5 0-281.6 126.1-281.6 281.6 0 155.5 126.1 281.6 281.6 281.6 155.5 0 281.6-126.1 281.6-281.6 0-155.5-126.1-281.6-281.6-281.6z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <div class="user-actions">
+      <div class="user-menu-profile">
+        <a class="user-menu-trigger profile">
+          <img
+            src="https://avatar-us.kwcdn.com/avatarj-us/MjE3/CgI2WRIITFY5bFRzOUQaIMtcizeCrpjlOEv_vM4CjE6ojvjNiPf2IEsHgnAU2vxqMAI-CgI2WRIITFY5bFRzOUQaMIrjLG5PuxwipbQDbhqq6OTJmch7QpUtNnL1kWaPBVlvkX2uiRFE9o-4GR6Iz5xUNjAC?imageMogr2/thumbnail/100x"
+            alt=""
+            class="user-menu-avatar"
           />
-          <path
-            d="M2.5 32.6c-.5 0-1-.2-1.4-.6-.8-.8-.7-2 0-2.8l11.2-10.9c.8-.8 2-.7 2.8 0 .8.8.7 2 0 2.8L3.9 32C3.5 32.4 3 32.6 2.5 32.6zM45.5 32.6c-.5 0-1-.2-1.4-.6L33 21.1c-.8-.8-.8-2 0-2.8.8-.8 2-.8 2.8 0l11.2 10.9c.8.8.8 2 0 2.8C46.5 32.4 46 32.6 45.5 32.6z"
-          />
-          <g>
+          <div class="user-menu-details">
+            <div class="user-menu-greeting">Hello, <span>Tran Trien</span></div>
+            <div class="user-menu-meta">Orders & Account</div>
+          </div>
+        </a>
+      </div>
+      <div class="user-menu-support">
+        <a class="user-menu-trigger support">
+          <svg
+            class="user-menu-support-icon"
+            alt=""
+            xmlns="http://www.w3.org/2000/svg"
+            version="1.1"
+            viewBox="0 0 1024 1024"
+            width="1em"
+            height="1em"
+            fill="#ffffff"
+          >
             <path
-              d="M41.5,15.4C41.5,15.4,41.5,15.4,41.5,15.4H6.5c-0.6,0-1.3-0.3-1.6-0.9c-0.4-0.5-0.4-1.2-0.2-1.8l3.7-9.2    c0.3-0.7,1-1.2,1.8-1.2h27.7c0.8,0,1.5,0.5,1.8,1.2l3.6,9c0.2,0.3,0.3,0.6,0.3,1C43.5,14.5,42.6,15.4,41.5,15.4z M9.4,11.5h29.3    l-2.1-5.3H11.5L9.4,11.5z"
-            />
-          </g>
+              d="M512 107.4c212.1 0 384 171.9 384 384 0 212.1-171.9 384-384 384-31.4 0-62.4-3.8-92.4-11.2l11.8 2.6-82.6 25c-38.6 11.7-79.2-8.5-93.7-45.3l-2.1-6c-2.3-7.6-3.4-15.4-3.3-23.3l0.7-44.8-3.8-3.5c-71.8-68.7-114.9-162.8-118.4-264.3l-0.2-13.2c0-212.1 171.9-384 384-384z m0 85.3c-164.9 0-298.7 133.7-298.7 298.7 0 89.7 39.8 172.9 107.4 229.3 9.9 8.2 15.5 20.5 15.3 33.3l-0.8 52.7 82.3-24.8c5.5-1.7 11.3-2.2 17-1.6l5.6 1c23.3 5.8 47.4 8.7 71.9 8.7 164.9 0 298.7-133.7 298.7-298.6 0-164.9-133.7-298.7-298.7-298.7z m-81.7 343.5c12.1 33.6 44 56.5 80.3 56.5 34 0 64.2-20 77.8-50.2l2.5-6.1c8-22.2 32.5-33.6 54.6-25.6 22.2 8 33.6 32.5 25.7 54.6-24.2 67.1-88.1 112.7-160.6 112.6-72.6 0-136.5-45.8-160.7-113-8-22.2 3.6-46.6 25.8-54.5 22.2-8 46.6 3.6 54.6 25.7z"
+            ></path>
+          </svg>
+
+          <div class="user-menu-detail">Support</div>
+        </a>
+      </div>
+      <div class="user-menu-lang">
+        <a class="user-menu-trigger lang">
+          <img
+            src="https://commimg-us.kwcdn.com/upload_commimg/commodity/708de5ab-5aa5-4eae-be6d-ad0e022967e2.png.slim.png?imageView2/2/w/48/q/70/format/webp"
+            class="user-menu-lang-icon"
+            srcset=""
+          />
+
+          <div class="user-menu-detail">EN</div>
+        </a>
+      </div>
+      <div class="user-menu-cart">
+        <svg
+          class="user-menu-cart-icon"
+          alt=""
+          aria-label=""
+          xmlns="http://www.w3.org/2000/svg"
+          version="1.1"
+          viewBox="0 0 1024 1024"
+          width="1em"
+          height="1em"
+          fill="#ffffff"
+        >
+          <path
+            d="M373.3 916.1c32.8 0 59.4-26.6 59.5-59.4 0-32.8-26.6-59.4-59.5-59.4-32.8 0-59.4 26.6-59.4 59.4 0 32.8 26.6 59.4 59.4 59.4z m396.2 0c32.8 0 59.4-26.6 59.5-59.4 0-32.8-26.6-59.4-59.5-59.4-32.8 0-59.4 26.6-59.4 59.4 0 32.8 26.6 59.4 59.4 59.4z m-684.2-815.1l90.3 17.4c49.9 9.6 88.7 49.2 97.2 99.4l2.3 13.8 486.2 0c91.4 0 165.5 74.1 165.5 165.5 0 8.8-0.7 17.6-2.1 26.3l-28.9 179.1c-12.6 78.3-80.2 135.8-159.4 135.8l-335.9 0c-80.8 0-149.1-59.7-160-139.6l-43-314.8-0.5-2.3-8.4-49.6c-2.5-15-14.2-26.9-29.1-29.8l-90.3-17.4c-23.1-4.4-38.3-26.8-33.9-49.9 4.4-23.1 26.8-38.3 50-33.9z m676 216l-473.2 0 36.9 270.1c5.2 37.7 37.4 65.9 75.5 65.9l335.9 0c37.4 0 69.3-27.1 75.2-64.1l28.9-179c0.7-4.2 1-8.5 1-12.8 0-44.3-35.9-80.2-80.2-80.1z"
+          ></path>
         </svg>
       </div>
     </div>
   </div>
 </div>
-<aum-nz-drawer
-  class="drawer-search"
-  [visible]="drawerState.isSearch"
-  [drawerType]="'search'"
-  [placement]="'top'"
-  (onClose)="closeDrawer($event)"
-  height="750px"
->
-  <div class="drawer-search-content">
-    <div class="search-close-wrapper">
-      <button
-        nz-button
-        class="search-close"
-        nzType="link"
-        nzShape="circle"
-        (click)="closeDrawer('search')"
-      >
-        <span nz-icon nzType="close" nzTheme="outline"></span>
-      </button>
-    </div>
-
-    <h1 class="search-title">What are you looking for?</h1>
-    <div class="search-field">
-      <nz-input-group [nzSuffix]="suffixIconSearch" class="nz-input-group">
-        <input type="text" nz-input placeholder="I'm looking for..." />
-      </nz-input-group>
-      <ng-template #suffixIconSearch>
-        <span nz-icon nzType="search"></span>
-      </ng-template>
-    </div>
-    <div class="quick-search">
-      <div>Quick Search :</div>
-      <span>Sweatshirt</span>
-    </div>
-    <div class="popular-product">
-      <h2>Popular product</h2>
-      <div nz-row class="product-card-list">
-        <nz-card nzHoverable [nzCover]="coverTemplate">
-          <h4 class="product-card-title">Regular cotton shirt</h4>
-          <div class="product-card-price">$18.99</div>
-        </nz-card>
-        <ng-template #coverTemplate>
-          <img
-            alt="example"
-            src="https://hongotheme.myshopify.com/cdn/shop/products/Lifestyle-product-11.jpg?v=1670302452&width=165"
-          />
-        </ng-template>
-        <nz-card nzHoverable [nzCover]="coverTemplate">
-          <h4 class="product-card-title">Regular cotton shirt</h4>
-          <div class="product-card-price">$18.99</div>
-        </nz-card>
-        <ng-template #coverTemplate>
-          <img
-            alt="example"
-            src="https://hongotheme.myshopify.com/cdn/shop/products/Lifestyle-product-11.jpg?v=1670302452&width=165"
-          />
-        </ng-template>
-        <nz-card nzHoverable [nzCover]="coverTemplate">
-          <h4 class="product-card-title">Regular cotton shirt</h4>
-          <div class="product-card-price">$18.99</div>
-        </nz-card>
-        <ng-template #coverTemplate>
-          <img
-            alt="example"
-            src="https://hongotheme.myshopify.com/cdn/shop/products/Lifestyle-product-11.jpg?v=1670302452&width=165"
-          />
-        </ng-template>
-        <nz-card nzHoverable [nzCover]="coverTemplate">
-          <h4 class="product-card-title">Regular cotton shirt</h4>
-          <div class="product-card-price">$18.99</div>
-        </nz-card>
-        <ng-template #coverTemplate>
-          <img
-            alt="example"
-            src="https://hongotheme.myshopify.com/cdn/shop/products/Lifestyle-product-11.jpg?v=1670302452&width=165"
-          />
-        </ng-template>
-        <nz-card nzHoverable [nzCover]="coverTemplate">
-          <h4 class="product-card-title">Regular cotton shirt</h4>
-          <div class="product-card-price">$18.99</div>
-        </nz-card>
-        <ng-template #coverTemplate>
-          <img
-            alt="example"
-            src="https://hongotheme.myshopify.com/cdn/shop/products/Lifestyle-product-11.jpg?v=1670302452&width=165"
-          />
-        </ng-template>
-      </div>
-    </div>
-  </div>
-</aum-nz-drawer>

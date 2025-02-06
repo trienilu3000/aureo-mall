@@ -1,4 +1,4 @@
-@import "../node_modules/@fontsource/jost/index.css";
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
 
 html,
 body {
@@ -22,9 +22,12 @@ html {
 
 body {
   margin: 0;
-  color: #000000d9;
   font-size: 14px;
-  font-family: Jost;
+  font-family: Inter;
   font-variant: tabular-nums;
   background-color: #fff;
+}
+
+p {
+  margin: 0 !important;
 }

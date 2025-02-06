@@ -36,7 +36,6 @@ import { AuthService } from '../../../core/services/user/auth.service';
     NzListModule,
     NzCardModule,
     MiniHeaderComponent,
-    NzDrawerComponent,
     RouterModule,
   ],
   templateUrl: './header.component.html',
@@ -54,7 +53,7 @@ import { AuthService } from '../../../core/services/user/auth.service';
       state(
         'visible',
         style({
-          top: '41px',
+          top: '52px',
           opacity: 1,
         }),
       ),
@@ -82,7 +81,6 @@ import { AuthService } from '../../../core/services/user/auth.service';
   ],
 })
 export class HeaderComponent implements OnInit {
-  menus: string[] = ['Product', 'Hot deals', 'Pages', 'Blogs', 'Features'];
   lastScrollTop = 0;
   isLoggedIn: boolean = false;
   ticking = false;
