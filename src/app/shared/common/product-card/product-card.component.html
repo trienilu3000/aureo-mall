@@ -1,0 +1,30 @@
+<div class="product-card">
+  <div class="product-card-image">
+    <img [src]="imageUrl" class="product-card-img" />
+  </div>
+  <div class="product-card-content">
+    <div class="product-card-price">
+      <div class="price-current">
+        <span class="price-currency">đ</span>
+        <span class="price-value">{{ price }}</span>
+      </div>
+      <div class="price-original">
+        <span class="price-currency">đ</span>
+        <span class="price-value line-through text-gray-500">225.875</span>
+      </div>
+      <div class="product-card-sales">
+        <span class="sales-count">1.2k+</span> sold
+      </div>
+    </div>
+
+    <div class="product-card-discount">
+      <span class="discount-percent">-23%</span>
+      <span class="discount-time">last 2 days</span>
+    </div>
+
+    <div class="product-card-rating">
+      <nz-rate [ngModel]="2.5" nzAllowHalf nzDisabled></nz-rate>
+      <span class="rating-count">(1.2k)</span>
+    </div>
+  </div>
+</div>

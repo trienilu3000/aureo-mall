@@ -1,0 +1,41 @@
+<div class="dropdown">
+  <div
+    aumTrigger
+    class="dropdown-title"
+    [triggerType]="trigger"
+    (triggerEvent)="handleTrigger($event)"
+  >
+    Categories
+  </div>
+  <div
+    class="dropdown-toggle"
+    *ngIf="dropdownItems.length > 0"
+    [ngClass]="{ hide: !hasTrigger }"
+  >
+    <svg
+      class="dropdown-arrow-icon"
+      viewBox="0 0 22 8"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      alt="bubble_arrow"
+      aria-label="bubble_arrow"
+    >
+      <path
+        d="M0.913721065,9 C2.56449311,9 4.14234104,8.31987419 5.27579998,7.1197412 L10.5459737,1.53955726 C11.3043971,0.73652071 12.5702105,0.700354613 13.3732471,1.45877803 C13.4009372,1.48492978 13.4278746,1.51186717 13.4540263,1.53955726 L18.7242,7.1197412 C19.857659,8.31987419 21.4355069,9 23.0862789,9"
+      ></path>
+    </svg>
+    <div class="dropdown-menu">
+      <div class="dropdown-menu-inner">
+        <div class="dropdown-menu-list">
+          <ng-container *ngFor="let item of dropdownItems">
+            <a class="dropdown-menu-item" (click)="onSelect(item)">
+              <span>{{ item }}</span>
+            </a>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

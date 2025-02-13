@@ -1,0 +1,64 @@
+.ant-rate {
+  color: #000 !important;
+  font-size: 14px;
+}
+
+.product-card {
+  width: 256px;
+}
+
+.product-card-image {
+  width: 100%;
+  height: 256px;
+}
+
+.product-card-img {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-card-price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.price-current {
+  color: #fb7701;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.price-original {
+  color: #777;
+  font-size: 13px;
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.price-currency {
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.product-card-sales {
+  color: #777;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.product-card-discount {
+  color: #000;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.product-card-rating {
+  font-size: 13px;
+}
+
+.product-card-content {
+  padding: 8px 0;
+}

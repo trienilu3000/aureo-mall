@@ -1,0 +1,52 @@
+.banner-wrapper {
+  margin: 0 auto;
+  min-width: 1080px;
+  max-width: 1440px;
+  padding: 0 44px;
+
+  .banner {
+    position: relative;
+  }
+
+  .banner-image-bg2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+  }
+
+  .banner-frame {
+    content: " ";
+    background-color: #ffffff;
+  }
+
+  .frame-1 {
+    position: absolute;
+    z-index: 1;
+    top: 18.7%;
+    right: 26.33%;
+    left: unset;
+    width: 11.53%;
+    height: 65.64%;
+    transform: rotate(-10deg);
+  }
+  .frame-2 {
+    position: absolute;
+    z-index: 2;
+    top: 13.35%;
+    right: 13.83%;
+    left: unset;
+    width: 13.46%;
+    height: 76.71%;
+    -webkit-transform: rotate(6deg);
+    transform: rotate(6deg);
+  }
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
