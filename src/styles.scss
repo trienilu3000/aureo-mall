@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Color+Emoji&display=swap");
 
 html,
 body {
@@ -23,7 +23,20 @@ html {
 body {
   margin: 0;
   font-size: 14px;
-  font-family: Inter;
+  font-family:
+    "miui",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    ".SFNSText-Regular",
+    Helvetica,
+    Arial,
+    sans-serif,
+    serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
   font-variant: tabular-nums;
   background-color: #fff;
 }

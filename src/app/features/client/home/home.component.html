@@ -1,22 +1,6 @@
 <div id="main-content">
-  <div class="banner-section section">
-    <div class="banner-wrapper">
-      <a>
-        <div class="banner">
-          <img
-            src="https://aimg.kwcdn.com/material-put/20a3d41b4e/dfc1fe92-a665-4e7b-a921-a22c122e2b6e.png?imageView2/q/70/format/webp"
-            class="banner-image banner-image-bg1"
-            alt="Promotional Banner"
-          />
-          <div class="banner-frame frame-1"></div>
-          <div class="banner-frame frame-2"></div>
-          <img
-            src="https://aimg.kwcdn.com/material-put/20a3d4b51f/a4ffce98-ca97-4fc8-8290-50db5b1bb456.png?imageView2/q/70/format/webp"
-            class="banner-image banner-image-bg2"
-          />
-        </div>
-      </a>
-    </div>
+  <div class="banner-section">
+    <aum-banner></aum-banner>
   </div>
   <div class="info-section section">
     <div class="info-wrapper">
@@ -170,136 +154,56 @@
     </div>
   </div>
   <div class="flash-sale section">
-    <div class="flash-sale-wrapper">
-      <div class="flash-sale-header">
-        <img
-          src="https://aimg.kwcdn.com/material-put/20a3d41b4e/fd2b949b-bb65-4f41-acd6-3c8625549922.png?imageView2/2/w/2000/q/80/format/webp"
-          alt="Flash Sale Banner"
-          class="flash-sale-image"
-        />
-        <div class="flash-sale-title">
-          <svg
-            class="flash-sale-icon"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1024 1024"
-            width="1em"
-            height="1em"
-          >
-            <path
-              d="M347.4 8.1l376.3 0c14.9 0 26.9 12.1 27 26.9 0 3.7-0.8 7.4-2.3 10.8l-135 309.4 0 0 264.6 0c14.9 0 26.9 12.1 27 26.9 0 6.9-2.6 13.5-7.4 18.5l-572.1 607.7c-10.2 10.8-27.3 11.3-38.1 1.1-7.2-6.8-10.1-17-7.6-26.6l103.7-388.4 0 0-236.8 0c-14.9 0-26.9-12.1-26.9-27 0-3.2 0.6-6.5 1.7-9.5l200.7-532.4c4-10.5 14-17.4 25.2-17.4z"
-            ></path>
-          </svg>
-          <div class="flash-sale-heading">Lightning Deals</div>
-          <span class="flash-sale-sub-heading">Limited time offer</span>
-          <svg
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            class="flash-sale-right-arrow"
-            alt="common_arrows"
-            aria-label="common_arrows"
-            aria-hidden="true"
-          >
-            <path
-              d="M846.6 329.7c19.9-17.2 49.9-15 67.1 4.9 15.4 17.9 15.2 44 0.5 61.6l-5.4 5.5-365.3 315.5c-15.9 13.7-38.5 15.2-55.8 4.6l-6.3-4.6-366.1-315.5c-19.9-17.1-22.1-47.2-5-67 15.4-17.9 41.3-21.5 60.8-9.6l6.2 4.6 335.1 288.7 334.2-288.7z"
-            ></path>
-          </svg>
-        </div>
-      </div>
-      <div class="flash-sale-content">
-        <aum-carousel>
-          <aum-product-card price="1"></aum-product-card>
-          <aum-product-card price="2"></aum-product-card>
-          <aum-product-card price="3"></aum-product-card>
-          <aum-product-card price="4"></aum-product-card>
-          <aum-product-card price="5"></aum-product-card>
-          <aum-product-card price="6"></aum-product-card>
-          <aum-product-card price="7"> </aum-product-card>
-          <aum-product-card price="8"></aum-product-card>
-          <aum-product-card price="9"></aum-product-card>
-          <aum-product-card price="10"></aum-product-card>
-          <aum-product-card price="11"></aum-product-card>
-          <aum-product-card price="12"> </aum-product-card>
-          <aum-product-card price="13"></aum-product-card>
-          <aum-product-card price="14"></aum-product-card>
-          <aum-product-card price="15"></aum-product-card>
-          <aum-product-card price="16"></aum-product-card>
-          <aum-product-card price="17"></aum-product-card>
-          <aum-product-card price="12"> </aum-product-card>
-          <aum-product-card price="13"></aum-product-card>
-          <aum-product-card price="14"></aum-product-card>
-        </aum-carousel>
-      </div>
-    </div>
+    <aum-product-slider title="Lightning Deals" subtitle="Limited time offer">
+      <aum-carousel>
+        <aum-product-card price="1"></aum-product-card>
+        <aum-product-card price="2"></aum-product-card>
+        <aum-product-card price="3"></aum-product-card>
+        <aum-product-card price="4"></aum-product-card>
+        <aum-product-card price="5"></aum-product-card>
+        <aum-product-card price="6"></aum-product-card>
+        <aum-product-card price="7"> </aum-product-card>
+        <aum-product-card price="8"></aum-product-card>
+        <aum-product-card price="9"></aum-product-card>
+        <aum-product-card price="10"></aum-product-card>
+        <aum-product-card price="11"></aum-product-card>
+        <aum-product-card price="12"> </aum-product-card>
+        <aum-product-card price="13"></aum-product-card>
+        <aum-product-card price="14"></aum-product-card>
+        <aum-product-card price="15"></aum-product-card>
+        <aum-product-card price="16"></aum-product-card>
+        <aum-product-card price="17"></aum-product-card>
+        <aum-product-card price="12"> </aum-product-card>
+        <aum-product-card price="13"></aum-product-card>
+        <aum-product-card price="14"></aum-product-card>
+      </aum-carousel>
+    </aum-product-slider>
   </div>
   <div class="cleaner-deals section">
-    <div class="cleaner-deals-wrapper">
-      <div class="cleaner-deals-header">
-        <img
-          src="https://aimg.kwcdn.com/material-put/20a3d41b4e/45b41652-30c2-4c36-a28d-159c02d52ab5.png?imageView2/2/w/2000/q/80/format/webp"
-          alt="cleaner-deals Banner"
-          class="cleaner-deals-image"
-        />
-        <div class="cleaner-deals-title">
-          <svg
-            class="cleaner-deals-icon"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1024 1024"
-            width="1em"
-            height="1em"
-          >
-            <path
-              d="M347.4 8.1l376.3 0c14.9 0 26.9 12.1 27 26.9 0 3.7-0.8 7.4-2.3 10.8l-135 309.4 0 0 264.6 0c14.9 0 26.9 12.1 27 26.9 0 6.9-2.6 13.5-7.4 18.5l-572.1 607.7c-10.2 10.8-27.3 11.3-38.1 1.1-7.2-6.8-10.1-17-7.6-26.6l103.7-388.4 0 0-236.8 0c-14.9 0-26.9-12.1-26.9-27 0-3.2 0.6-6.5 1.7-9.5l200.7-532.4c4-10.5 14-17.4 25.2-17.4z"
-            ></path>
-          </svg>
-          <div class="cleaner-deals-heading">Clearance deals</div>
-          <span class="cleaner-deals-sub-heading">Limited stock</span>
-          <svg
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            width="1em"
-            height="1em"
-            class="cleaner-deals-right-arrow"
-            alt="common_arrows"
-            aria-label="common_arrows"
-            aria-hidden="true"
-          >
-            <path
-              d="M846.6 329.7c19.9-17.2 49.9-15 67.1 4.9 15.4 17.9 15.2 44 0.5 61.6l-5.4 5.5-365.3 315.5c-15.9 13.7-38.5 15.2-55.8 4.6l-6.3-4.6-366.1-315.5c-19.9-17.1-22.1-47.2-5-67 15.4-17.9 41.3-21.5 60.8-9.6l6.2 4.6 335.1 288.7 334.2-288.7z"
-            ></path>
-          </svg>
-        </div>
-      </div>
-      <div class="cleaner-deals-content">
-        <aum-carousel>
-          <aum-product-card price="1"></aum-product-card>
-          <aum-product-card price="2"></aum-product-card>
-          <aum-product-card price="3"></aum-product-card>
-          <aum-product-card price="4"></aum-product-card>
-          <aum-product-card price="5"></aum-product-card>
-          <aum-product-card price="6"></aum-product-card>
-          <aum-product-card price="7"> </aum-product-card>
-          <aum-product-card price="8"></aum-product-card>
-          <aum-product-card price="9"></aum-product-card>
-          <aum-product-card price="10"></aum-product-card>
-          <aum-product-card price="11"></aum-product-card>
-          <aum-product-card price="12"> </aum-product-card>
-          <aum-product-card price="13"></aum-product-card>
-          <aum-product-card price="14"></aum-product-card>
-          <aum-product-card price="15"></aum-product-card>
-          <aum-product-card price="16"></aum-product-card>
-          <aum-product-card price="17"></aum-product-card>
-          <aum-product-card price="12"> </aum-product-card>
-          <aum-product-card price="13"></aum-product-card>
-          <aum-product-card price="14"></aum-product-card>
-        </aum-carousel>
-      </div>
-    </div>
+    <aum-product-slider title="Clearance deals" subtitle="Limited stock">
+      <aum-carousel>
+        <aum-product-card price="1"></aum-product-card>
+        <aum-product-card price="2"></aum-product-card>
+        <aum-product-card price="3"></aum-product-card>
+        <aum-product-card price="4"></aum-product-card>
+        <aum-product-card price="5"></aum-product-card>
+        <aum-product-card price="6"></aum-product-card>
+        <aum-product-card price="7"> </aum-product-card>
+        <aum-product-card price="8"></aum-product-card>
+        <aum-product-card price="9"></aum-product-card>
+        <aum-product-card price="10"></aum-product-card>
+        <aum-product-card price="11"></aum-product-card>
+        <aum-product-card price="12"> </aum-product-card>
+        <aum-product-card price="13"></aum-product-card>
+        <aum-product-card price="14"></aum-product-card>
+        <aum-product-card price="15"></aum-product-card>
+        <aum-product-card price="16"></aum-product-card>
+        <aum-product-card price="17"></aum-product-card>
+        <aum-product-card price="12"> </aum-product-card>
+        <aum-product-card price="13"></aum-product-card>
+        <aum-product-card price="14"></aum-product-card>
+      </aum-carousel>
+    </aum-product-slider>
   </div>
   <div class="section">
     <div class="explore-section">
@@ -312,15 +216,18 @@
                   <img
                     src="https://aimg.kwcdn.com/material-put/20a3d4caf7/1489166d-8575-4f4b-880f-154fed72b4f5.png?imageView2/2/w/1300/q/80/format/webp"
                     alt=""
+                    class="feature-header-image"
                   />
                 </div>
-                <div class="feature-header-title">Features Stores</div>
+                <div class="feature-header-content">
+                  <h2 class="feature-header-title">FEATURED STORES</h2>
+                </div>
               </a>
-              <a>
-                see more
+              <a class="feature-header-see-more">
+                See more
                 <span
                   ><svg
-                    class="_77o2T5Pa"
+                    class="arrow-icon"
                     alt=""
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
@@ -337,7 +244,118 @@
                 </span>
               </a>
             </div>
-            <div class="featured-content"></div>
+            <div class="store-list">
+              <div class="store-list-wrapper">
+                <div class="store-card">
+                  <div class="store-card-banner">
+                    <img
+                      src="https://img.kwcdn.com/product/fancy/59552895-445b-4a69-801b-3129ecc1568a.jpg?imageView2/2/w/500/q/70/format/webp"
+                      alt=""
+                      class="store-card-image"
+                    />
+                  </div>
+                  <div class="store-card-content">
+                    <div class="store-card-heading">
+                      <div class="store-card-banner">
+                        <img
+                          src="https://img.kwcdn.com/supplier-public-tag/66bf17cc-ec12-491d-bd11-18e3b80e224d"
+                          alt=""
+                          class="store-card-heading-image"
+                        />
+                      </div>
+                      <div class="store-card-title">
+                        Xinlichen shoe industry
+                      </div>
+                    </div>
+
+                    <div class="store-card-total-sales">
+                      6,2k+ <span>sold</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="store-card">
+                  <div class="store-card-banner">
+                    <img
+                      src="https://img.kwcdn.com/product/fancy/59552895-445b-4a69-801b-3129ecc1568a.jpg?imageView2/2/w/500/q/70/format/webp"
+                      alt=""
+                      class="store-card-image"
+                    />
+                  </div>
+                  <div class="store-card-content">
+                    <div class="store-card-heading">
+                      <div class="store-card-banner">
+                        <img
+                          src="https://img.kwcdn.com/supplier-public-tag/66bf17cc-ec12-491d-bd11-18e3b80e224d"
+                          alt=""
+                          class="store-card-heading-image"
+                        />
+                      </div>
+                      <div class="store-card-title">
+                        Xinlichen shoe industry
+                      </div>
+                    </div>
+
+                    <div class="store-card-total-sales">
+                      6,2k+ <span>sold</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="store-card">
+                  <div class="store-card-banner">
+                    <img
+                      src="https://img.kwcdn.com/product/fancy/59552895-445b-4a69-801b-3129ecc1568a.jpg?imageView2/2/w/500/q/70/format/webp"
+                      alt=""
+                      class="store-card-image"
+                    />
+                  </div>
+                  <div class="store-card-content">
+                    <div class="store-card-heading">
+                      <div class="store-card-banner">
+                        <img
+                          src="https://img.kwcdn.com/supplier-public-tag/66bf17cc-ec12-491d-bd11-18e3b80e224d"
+                          alt=""
+                          class="store-card-heading-image"
+                        />
+                      </div>
+                      <div class="store-card-title">
+                        Xinlichen shoe industry
+                      </div>
+                    </div>
+
+                    <div class="store-card-total-sales">
+                      6,2k+ <span>sold</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="store-card">
+                  <div class="store-card-banner">
+                    <img
+                      src="https://img.kwcdn.com/product/fancy/59552895-445b-4a69-801b-3129ecc1568a.jpg?imageView2/2/w/500/q/70/format/webp"
+                      alt=""
+                      class="store-card-image"
+                    />
+                  </div>
+                  <div class="store-card-content">
+                    <div class="store-card-heading">
+                      <div class="store-card-banner">
+                        <img
+                          src="https://img.kwcdn.com/supplier-public-tag/66bf17cc-ec12-491d-bd11-18e3b80e224d"
+                          alt=""
+                          class="store-card-heading-image"
+                        />
+                      </div>
+                      <div class="store-card-title">
+                        Xinlichen shoe industry
+                      </div>
+                    </div>
+
+                    <div class="store-card-total-sales">
+                      6,2k+ <span>sold</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="categories-section">
@@ -348,15 +366,18 @@
                   <img
                     src="https://aimg.kwcdn.com/material-put/20a3d4caf7/1489166d-8575-4f4b-880f-154fed72b4f5.png?imageView2/2/w/1300/q/80/format/webp"
                     alt=""
+                    class="categories-header-image"
                   />
                 </div>
-                <div class="categories-header-title">Features Stores</div>
+                <div class="categories-header-content">
+                  <h2 class="categories-header-title">FEATURED STORES</h2>
+                </div>
               </a>
-              <a>
-                see more
+              <a class="categories-header-see-more">
+                See more
                 <span
                   ><svg
-                    class="_77o2T5Pa"
+                    class="arrow-icon"
                     alt=""
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
@@ -373,16 +394,78 @@
                 </span>
               </a>
             </div>
-            <div class="categories-content"></div>
+            <div class="categories-list">
+              <div class="categories-list-wrapper">
+                <div class="categories-card">
+                  <div class="categories-card-banner">
+                    <img
+                      src="https://img.kwcdn.com/product/fancy/59552895-445b-4a69-801b-3129ecc1568a.jpg?imageView2/2/w/500/q/70/format/webp"
+                      alt=""
+                      class="categories-card-image"
+                    />
+                  </div>
+                  <div class="categories-card-content">
+                    <div class="categories-card-heading">
+                      <div class="categories-card-title">
+                        Xinlichen shoe industry
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="categories-card">
+                  <div class="categories-card-banner">
+                    <img
+                      src="https://img.kwcdn.com/product/fancy/59552895-445b-4a69-801b-3129ecc1568a.jpg?imageView2/2/w/500/q/70/format/webp"
+                      alt=""
+                      class="categories-card-image"
+                    />
+                  </div>
+                  <div class="categories-card-content">
+                    <div class="categories-card-heading">
+                      <div class="categories-card-title">
+                        Xinlichen shoe industry
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="categories-card">
+                  <div class="categories-card-banner">
+                    <img
+                      src="https://img.kwcdn.com/product/fancy/59552895-445b-4a69-801b-3129ecc1568a.jpg?imageView2/2/w/500/q/70/format/webp"
+                      alt=""
+                      class="categories-card-image"
+                    />
+                  </div>
+                  <div class="categories-card-content">
+                    <div class="categories-card-heading">
+                      <div class="categories-card-title">
+                        Xinlichen shoe industry
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="categories-card">
+                  <div class="categories-card-banner">
+                    <img
+                      src="https://img.kwcdn.com/product/fancy/59552895-445b-4a69-801b-3129ecc1568a.jpg?imageView2/2/w/500/q/70/format/webp"
+                      alt=""
+                      class="categories-card-image"
+                    />
+                  </div>
+                  <div class="categories-card-content">
+                    <div class="categories-card-heading">
+                      <div class="categories-card-title">
+                        Xinlichen shoe industry
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="section"></div>
-  <div class="section"></div>
-  <div class="section"></div>
-  <div class="section"></div>
-  <div class="section"></div>
   <div class="section"></div>
 </div>
