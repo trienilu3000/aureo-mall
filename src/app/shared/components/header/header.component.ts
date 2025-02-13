@@ -23,6 +23,7 @@ import {
   trigger,
 } from '@angular/animations';
 import { AuthService } from '../../../core/services/user/auth.service';
+import { DropdownComponent } from '../../common/dropdown/dropdown.component';
 
 @Component({
   selector: 'aum-header',
@@ -37,6 +38,7 @@ import { AuthService } from '../../../core/services/user/auth.service';
     NzCardModule,
     MiniHeaderComponent,
     RouterModule,
+    DropdownComponent,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',

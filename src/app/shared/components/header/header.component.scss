@@ -22,7 +22,9 @@
   align-items: center;
   justify-content: center;
   margin: 0;
-  background-color: #ad0000;
+  background-color: #ffffff;
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #ececec;
   gap: 20px;
 }
 
@@ -36,9 +38,7 @@
   }
 
   .logo-svg-icon {
-    background-color: #ffffff;
-    border: 1px solid #ffffff;
-    border-radius: 12px;
+    border-radius: 16px;
     height: 100%;
     width: 100%;
   }
@@ -60,13 +60,13 @@
   .menu-item-link {
     display: flex;
     align-items: center;
-    color: #ffffff;
+    color: #000;
     font-size: 12px;
     font-weight: 600;
     margin-left: 10px;
     padding: 12px 8px;
     &:hover {
-      background-color: #920000;
+      background-color: #f2f2f2;
       border-radius: 25px;
     }
   }
@@ -90,7 +90,7 @@
   padding-left: 15px;
   border-radius: 23px;
   height: 38px;
-
+  border: 2px solid #000;
   .search-bar-button {
     display: flex;
     align-items: center;
@@ -125,7 +125,7 @@
 .user-menu-trigger {
   display: flex;
   align-items: center;
-  color: #ffffff;
+  color: #000;
   margin-left: 10px;
   font-size: 12px;
   font-weight: 600;
