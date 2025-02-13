@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 99;
+  z-index: 999;
   transition: top 0.3s ease-in-out;
   transform: translateY(0);
 }
@@ -16,7 +16,7 @@
   position: fixed;
   left: 0;
   right: 0;
-  z-index: 98;
+  z-index: 998;
   height: $header-height;
   flex-direction: row;
   align-items: center;
