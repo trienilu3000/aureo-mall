@@ -1,0 +1,46 @@
+.interest-explorer-wrapper {
+  margin: 0 auto;
+  min-width: 1080px;
+  max-width: 1350px;
+  position: relative;
+}
+
+.interest-explorer-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.interest-explorer-banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 56px;
+  width: max-content;
+  transform: translate(-50%);
+}
+
+.interest-explorer-image {
+  height: 56px;
+  object-fit: cover;
+}
+
+.interest-explorer-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+  width: 100%;
+  margin: 30px 0 0;
+  font-weight: 800;
+}
+
+.interest-explorer-title {
+  font-weight: 800;
+}

@@ -1,0 +1,62 @@
+<div class="tab">
+  <div class="tab-wrapper">
+    <div class="tab-header">
+      <div class="tab-container" #tabContainer>
+        <div class="tab-list" #tabList [style.transform]="translateValue">
+          <div
+            *ngFor="let tab of tabs; let i = index"
+            class="tab-item"
+            [ngClass]="{ active: activeTabIndex === i }"
+            (click)="selectTab(i)"
+          >
+            {{ tab.label }}
+          </div>
+        </div>
+      </div>
+      <div class="tab-arrow-prev" *ngIf="this.currentIndex > 0">
+        <div class="slider-arrow-prev" (click)="prev()">
+          <svg
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            class="arrow-prev-icon"
+            alt="common_arrows"
+            aria-label="common_arrows"
+            aria-hidden="true"
+          >
+            <path
+              d="M846.6 329.7c19.9-17.2 49.9-15 67.1 4.9 15.4 17.9 15.2 44 0.5 61.6l-5.4 5.5-365.3 315.5c-15.9 13.7-38.5 15.2-55.8 4.6l-6.3-4.6-366.1-315.5c-19.9-17.1-22.1-47.2-5-67 15.4-17.9 41.3-21.5 60.8-9.6l6.2 4.6 335.1 288.7 334.2-288.7z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <div
+        class="tab-arrow-next"
+        *ngIf="this.currentIndex + 1 < this.totalItems"
+      >
+        <div class="slider-arrow-next" (click)="next()">
+          <svg
+            viewBox="0 0 1024 1024"
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            width="1em"
+            height="1em"
+            class="arrow-next-icon"
+            alt="common_arrows"
+            aria-label="common_arrows"
+            aria-hidden="true"
+          >
+            <path
+              d="M846.6 329.7c19.9-17.2 49.9-15 67.1 4.9 15.4 17.9 15.2 44 0.5 61.6l-5.4 5.5-365.3 315.5c-15.9 13.7-38.5 15.2-55.8 4.6l-6.3-4.6-366.1-315.5c-19.9-17.1-22.1-47.2-5-67 15.4-17.9 41.3-21.5 60.8-9.6l6.2 4.6 335.1 288.7 334.2-288.7z"
+            ></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="tab-content">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>
