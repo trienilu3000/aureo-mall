@@ -1,0 +1,15 @@
+.dropdown-menu-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  min-height: 38px;
+  padding: 8px 30px;
+  font-size: 14px;
+  color: #222;
+  cursor: pointer;
+}
+
+.dropdown-menu-item:hover {
+  background-color: #f2f2f2;
+}

@@ -5,13 +5,10 @@
     [triggerType]="trigger"
     (triggerEvent)="handleTrigger($event)"
   >
-    Categories
+    <div class="dropdown-label">{{ label }}</div>
+    <div class="dropdown-sub-label" *ngIf="subLabel">{{ subLabel }}</div>
   </div>
-  <div
-    class="dropdown-toggle"
-    *ngIf="dropdownItems.length > 0"
-    [ngClass]="{ hide: !hasTrigger }"
-  >
+  <div class="dropdown-toggle" [ngClass]="{ hide: !hasTrigger }">
     <svg
       class="dropdown-arrow-icon"
       viewBox="0 0 22 8"
@@ -29,11 +26,7 @@
     <div class="dropdown-menu">
       <div class="dropdown-menu-inner">
         <div class="dropdown-menu-list">
-          <ng-container *ngFor="let item of dropdownItems">
-            <a class="dropdown-menu-item" (click)="onSelect(item)">
-              <span>{{ item }}</span>
-            </a>
-          </ng-container>
+          <ng-content></ng-content>
         </div>
       </div>
     </div>

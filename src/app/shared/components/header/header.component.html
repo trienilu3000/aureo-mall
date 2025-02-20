@@ -133,8 +133,28 @@
             class="user-menu-avatar"
           />
           <div class="user-menu-details">
-            <div class="user-menu-greeting">Hello, <span>Tran Trien</span></div>
-            <div class="user-menu-meta">Orders & Account</div>
+            <aum-dropdown
+              label="Hello Tran Trien"
+              subLabel="Orders & Account"
+              trigger="hover"
+              class="user-menu-meta"
+            >
+              <aum-dropdown-item value="Support Center"
+                >Support Center</aum-dropdown-item
+              >
+              <aum-dropdown-item value="Safety Center"
+                >Safety Center</aum-dropdown-item
+              >
+              <aum-dropdown-item value="Chat with AureoMall"
+                >Chat with AureoMall</aum-dropdown-item
+              >
+              <aum-dropdown-item value="AureoMall purchase protection"
+                >AureoMall purchase protection</aum-dropdown-item
+              >
+              <aum-dropdown-item value="Terms of use"
+                >Terms of use</aum-dropdown-item
+              >
+            </aum-dropdown>
           </div>
         </a>
       </div>
@@ -155,7 +175,25 @@
             ></path>
           </svg>
 
-          <div class="user-menu-detail">Support</div>
+          <div class="user-menu-detail">
+            <aum-dropdown label="Support" trigger="hover">
+              <aum-dropdown-item value="Support Center"
+                >Support Center</aum-dropdown-item
+              >
+              <aum-dropdown-item value="Safety Center"
+                >Safety Center</aum-dropdown-item
+              >
+              <aum-dropdown-item value="Chat with AureoMall"
+                >Chat with AureoMall</aum-dropdown-item
+              >
+              <aum-dropdown-item value="AureoMall purchase protection"
+                >AureoMall purchase protection</aum-dropdown-item
+              >
+              <aum-dropdown-item value="Terms of use"
+                >Terms of use</aum-dropdown-item
+              >
+            </aum-dropdown>
+          </div>
         </a>
       </div>
       <div class="user-menu-lang">

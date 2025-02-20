@@ -170,3 +170,9 @@
     margin-right: 5px;
   }
 }
+
+:host {
+  aum-dropdown .dropdown-label {
+    font-weight: 400 !important;
+  }
+}

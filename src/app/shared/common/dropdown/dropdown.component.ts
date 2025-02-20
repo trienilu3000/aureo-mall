@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener, Input } from '@angular/core';
+import { Component, HostListener, Input, TemplateRef } from '@angular/core';
 import { TriggerDirective } from 'src/app/core/directives/trigger.directive';
 
 @Component({
@@ -10,10 +10,11 @@ import { TriggerDirective } from 'src/app/core/directives/trigger.directive';
   styleUrl: './dropdown.component.scss',
 })
 export class DropdownComponent {
-  @Input() dropdownItems: any[] = ['Item 1', 'Item 2', 'Item 3'];
-  @Input() selected: any;
+  readonly triggerDirective = TriggerDirective;
+
   @Input() trigger: 'click' | 'hover' | 'focus' = 'click';
-  @Input() label: string = 'Dropdown';
+  @Input() label: string = 'Select';
+  @Input() subLabel: string = '';
   @Input() hasTrigger: boolean = false;
 
   @HostListener('mouseleave', ['$event'])
@@ -24,7 +25,7 @@ export class DropdownComponent {
       this.hasTrigger = true;
     }
   }
-  onSelect(item: any): void {
-    this.selected = item;
+  greet(name: string, age: number) {
+    console.log(`Hello ${name}, you are ${age} years old.`);
   }
 }

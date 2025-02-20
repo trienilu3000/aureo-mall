@@ -24,6 +24,7 @@ import {
 } from '@angular/animations';
 import { AuthService } from '../../../core/services/user/auth.service';
 import { DropdownComponent } from '../../common/dropdown/dropdown.component';
+import { DropdownItemComponent } from '../../common/dropdown/dropdown-item/dropdown-item.component';
 
 @Component({
   selector: 'aum-header',
@@ -39,6 +40,7 @@ import { DropdownComponent } from '../../common/dropdown/dropdown.component';
     MiniHeaderComponent,
     RouterModule,
     DropdownComponent,
+    DropdownItemComponent,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
